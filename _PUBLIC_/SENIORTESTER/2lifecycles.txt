@@ -1,24 +1,37 @@
 
 dev life cycle
-
+________
 ferrari
 
 
 waterfall -> test al final
 
 v model -> se preparan tests en cada etapa. Pero test aceptacion al final
+ - req spec -> define las user needs --> accep tests 
+ - funcional spec -> define las funciones necesarias para cumplir las user needs -> integr tests 
+ - tech spec -> diseño de las fuciones  --> integra tests
+ - program spec -> diseño detalladdo  --> comp tests
 
 ciclico -> tests de aceptacion incrementales
+- reqs
+- build
+- test  tambien lo testean los usuarios
+- 
 
 
+
+[
+wikipedia:
+  - req spec -> interviews, questiona, prototypes, use cases
+]
+_________
 dummy
 
 v model 
   - reqs spec  -> proposito
-  - functional spec -> funcionalidades, dialogos
+  - functional spec -> mapear reqs a funciones, dialogos, reqs. no funcionales
   - tech spec -> division en subsistemas
-  - compo spec -> detalles de cada subsistema
-
+  - compo spec -> detalles de cada subsistema
   - progr 
 
 verifi -> ver si cumple los requerimientos de cada fase
@@ -30,12 +43,212 @@ cada nivel requiere diferentes metodos y tools
 
 ganar robustez con negative test -> tests especiales no mencionados en la spec.  generan excepcion
 
+compo test
+- test basis: 
+  - si white box tests, se necesitan los sources.
+  - configuracion 
+- test objetives:
+  - el interior del compo. 	
+    - funcionalidad
+    - robustez - que soporta fallos (negative tests)
+    - eficiencia
+    - mantenibilidad
+  
 
-NO big bang integration -> esperar a que todo este listo para integrar
+
+integr test
+- goal: detectar fallos en las interfaces, y en la interaccion.
+- 'system integration test' / 'integracion nivel alto test -> test de la intefaz sistema externo
+- testear sft COTS : sft comercial
+- test basis: diseños, arquitectura, workflow, use cases
+- test objetives:
+	- detectar fallos en las interfaces, y en la interaccion.
+		-3 tipos:
+			- fallo en el protocolo, interface incompatible, falla un componente
+			- fallo en la interpretacion en las especificaciones
+			- fallo en el timing (carga, interpretarlo como un fallo) 
+  	- configuracion
+  	- database
+- test environment
+	- reusar los test drivers del nivel componente
+	- logs
+- es dificil acceder a los componentes
+- 
+- estrategias
+  - top-down
+  - bottom-up
+  - backbone 
+    - se construye un backbone donde integrar gradualmente los compos.
+    - se pueden integrar en cualquier orden
+  - ad-hoc 
+  	- se integran a medida que se terminan.
+  	- necesita stubs y drivers
+  - la estrategia dependera de 3 factores:
+    - test plan: nos dice que se testea, con que intensidad, y a que nivel.
+    - project plan: nos dice cuando estaran los componentes. 
+    	Pero en determinar el orden de implement deberia involucrarse el tester. 
+    - arquitectura: nos dice que compoenntes hay.
+  	
+- NO big bang integration -> esperar a que todo este listo para integrar
   
 
 system test 
-- prueba todos los componentes. valida los requerimientos funcio y no-funcion desde punto vista usuario
-- tambien es comprobarladocumetacion, manuales...
-- incluye perfomance testing
+- prueba todos los componentes.  
+- punto vista usuario. 
+- valida los requerimientos funcio y no-funcion
+- tambien es comprobar la documetacion, manuales...
+- no usa test drivers ni stubs, sino el hws i sf que se usara en realidad
+- incluye perfomance testing
 - la informacon en bbdd es muy importante q sea la correcta (test data)
+- tes basis: docs que tienen una vision global (reqs sof, hard, riesgos, manuales..)
+- test objectives:  requerimientos funcio y no-funcion
+- si requerimeintos son dudosos: tester hace tests de exploracion.
+- si falta decision por visiones diferentes: tester toma decision.
+- sin requerimientos claros, el proyecto fallara.     
+
+accept test
+- el cliente deberia ser el responsable
+- 4 formas de acceptance tests:
+  - determinar cumplimiento del contracto
+  	- el cliente decide si tiene o no errores
+  	- los tests de aceptacion deberian ser revisados por el cliente
+  	- se prueba en el entorno del cliente
+  - testeo de usuario
+  - testeo operacional
+  - test de campo (alpha beta)
+  
+ 
+ __________ 
+ ferrari
+ 
+ compo test
+ - compo = program = module = unit
+ - test basis:
+   - compo reqs
+   - design
+   - code
+  ¿¿ - no usar specs input & spected outputs. ?? --> testing based on code ?? (ch4)
+   
+   
+ integration test
+ - test object: fallos en interface
+ - test basis: diseños, arquitectura, worklows, use-cases
+ - pueden usarse stubs
+ - estrategias:
+   - integracion big-bang
+      - todos a la vez 
+      - no es incremental
+   - integracion top-down
+      - se empieza a desarollar los componentes que llaman a otros.
+   	  - se usan stubs para simular compon. llamados
+   - integracion bottom-up
+      - se usan drivers : compon. simulado que llama a otros
+ 
+ - hay 2 niveles de intregracion
+   - intregracion de compos.
+   - integracion de sistemas.
+ [ no veo clara la explicacion del integracion con stubs 
+    -> esto es compo. testing!
+    -> por otro lado, al terminar la estrategia se han probado todos los
+    componentes, lo que es como un system testing
+    
+    Como yo lo veo, el integration testing deberia ser entre componentes reales,
+    no stubs
+    ]  
+
+
+ 
+ system test
+ 
+ - test basis:
+    -sytem & soft requer
+    -use cases
+    -funcional specs
+    -risk reports
+    -manuales
+    -NO code
+ 
+ - test object: sytem under test
+ 
+    
+ - funcional
+    - reqs. funcionales
+ 	- seguridad
+ 	- interoperabilidad
+ - no funcional
+   - facilidad de instalacion
+   - facilidad de hacer cambios (mantenibilidad)
+   - rendimineto - comportamiento condiciones normales
+   - carga -  comportamiento en condicines de carga
+   - estres - comportamiento en condicines de estres / limite
+   - facilidad de portar a otras plataformas
+   - recovery - como se recupera ante un fallo
+   - fiabilidad - reliability 
+   - facilidad de uso - usabilidad
+ - cantidad: depende de las verifiaciones hechas en la spec (ch3)
+   
+ 
+ accept test
+  - el responsable es el cliente / usuario
+  - test basis: 
+  	  - reqs spec document. (ch3: tecnicas de verificar reqs. docu)
+     		- user reqs.
+     		- system reqs.
+     		- use cases
+     		- business processes
+		    - risk reports
+       - NO code
+       
+ - test objects:
+    - system being tested
+    - forms
+    - reports produced
+    - deployment
+ [y los manuales de ususario?]
+ 
+ - user acceptance (UAT) = site aceptance = field acceptance = end-user testing
+    - factory acceptance testing -> users lo prueban en entorno del proveedor
+    - site acceptance testing [no es == beta??] -> user lo prueban en su lugar
+ - operational acceptance
+ 	- facilidad de backup
+ 	- facilidad de recovery
+ 	- training
+ 	¿¿-mantenimiento??
+ 	- carga de datos
+ 	- seguridad
+ 	 
+ - contract acceptance
+ 	- a veces un contrato explica los criterios de acpetacion.
+ - alpha beta
+    - alfa - prueba en el entorno del proveedor, antes de entregarse
+    - beta - prueba en el entorno del cliente = field testing
+ 
+ [¿¿ los use cases en que documento se indican??? ]
+ [¿¿ diferencia entre requeriments spec -vs- funcional spec ?? ]
+ 
+ [
+ ¿¿ diferencia entre system test -vs- accep test ?? 
+ - creo que system lo llevan develpers, y accep lo lleva el cliente
+ ] 
+ 
+ __________
+ ferrari
+ 
+  test types
+  
+  - functional tests
+     - use cases
+     - seguridad
+     - interoperabilidad
+     
+  - non-funcional tests
+  - structural tests
+    - mide cuantos tests se han hecho
+    - sirve para cada nivel
+    
+  - change tests
+    - retesting 
+    - regression
+    
+ [debug fixes defect, test find defect]
+    
