@@ -1,0 +1,231 @@
+/**** Global Widgets Styles ****/
+
+/* Keyword Search Box */
+#keywordsearch,#keywordsearch-clone {
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	background:#fff url("/images/shared/background_srch.gif") 0 0 repeat-x;
+	margin:24px 0 0 0;
+	float:left;
+	position:relative;
+
+	padding:12px;
+	line-height:100%;
+	font-size:11px;
+}
+#keywordsearch-label,#keywordsearch-label-clone, #keywordsearch-locationsearch-label, #keywordsearch-locationsearch-label-clone {
+	padding:5px 8px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #999999;
+	font-weight:bold;
+	color:#555555;
+	background-color:#ffffff;
+	float:left;
+	position:absolute;
+	top:-18px;
+	left:10px;
+	display:inline;
+	clear:both;
+	margin:0;
+	z-index:100;
+}
+#keywordsearch-locationsearch-label, #keywordsearch-locationsearch-label-clone {
+	left:230px;
+}
+#keywordsearch-button, #keywordsearch-button-clone, #emailsubscribe-button, #emailsubscribe-button-clone {
+	background:#333333 url("/images/shared/background_btn.gif") 0 0 repeat-x;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #555555;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	font-size: 11px;
+	margin:1px 0 0 0;
+	padding:2px 2px 1px 2px;
+	cursor:pointer;
+	font-weight:bold;
+	overflow: visible;
+	position:relative;
+	vertical-align:top;
+	display:block;
+	float:left;
+}
+#keywordsearch-button:hover,#keywordsearch-button-clone:hover, #emailsubscribe-button:hover, #emailsubscribe-button-clone:hover {
+	border-top:1px solid #bbb;
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #bbb;
+	border-right:1px solid #bbb;
+
+}
+#keywordsearch-q,#keywordsearch-q-clone, #keywordsearch-locationsearch,#keywordsearch-locationsearch-clone {
+	margin:1px 5px 0px 0px;
+	padding:0px !important;
+	float:left;
+	width:209px;
+}
+.keywordsearch-default-text {
+	color:#999;
+}
+
+/* Search Actions */
+#search-wrapper, #search-wrapper-clone {
+	clear:both;
+	padding:10px 0px;
+	width:100%;
+}
+
+/* RSS Links */
+#rss-wrapper, #rss-wrapper-clone {
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	background:#fff url("/images/shared/background_srch.gif") 0 0 repeat-x;
+	margin:24px 0 0 0;
+	width:312px;
+	padding:13px 12px 13px 12px;
+	float:right;
+	min-height:19px;
+	position:relative;
+}
+.rsslink-jobs2web {
+	padding-left:4px;
+}
+#rss-links,#rss-links-clone {
+	display:inline-block;
+	float:left;
+}
+#rss-links a, #rss-links-clone a {
+	float:left;
+	margin-right:4px;
+}
+#rss-label,#rss-label-clone {
+	padding:4px 8px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #999999;
+	font-weight:bold;
+	color:#555555;
+	background-color:#ffffff;
+	position:absolute;
+	top:-18px;
+	left:10px;
+	display:inline-block;
+	line-height:100%;
+	font-size:11px;
+	clear:both;
+	float:left;
+}
+#social-network-button, #social-network-button-clone {
+	display:inline-block;
+	float:left;
+}
+.fb-like-wrapper, #fb-root, .fb-like {
+	float:right;
+	position: relative;
+}
+.fb-like-wrapper {
+	left:-17px;
+}
+
+/* Save this search */
+#savesearch-wrapper, #savesearch-wrapper-clone {
+	clear:both;
+	font-size:110%;
+	padding:10px 0 0 0;
+	height:1%;
+	clear:both;
+}
+#savesearch-link, #savesearch-link-clone, .ssbShowHide {
+	display:inline-block;
+	padding:3px 0 3px 30px;
+	margin:0;
+	background:transparent url('/images/shared/icon-email.png') 0 2px no-repeat;
+	cursor:pointer;
+	cursor:hand;
+	text-decoration:underline;
+	font-weight:bold;
+	vertical-align:middle;
+	display:inline-block;
+}
+a:hover#savesearch-link,a:hover#savesearch-link-clone {
+	text-decoration:none;
+}
+#savesearch-text, #savesearch-text-clone {
+	margin:3px 0;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+/* Email Subscribe */
+#emailsubscribe, #emailsubscribe-clone {
+	display:block;
+	clear:left;
+	background:#fff url("/images/shared/background_srch.gif") 0 0 repeat-x;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	padding:12px;
+	margin:10px 0 10px 0;
+	float:left;
+	clear:both;
+}
+#savesearch-wrapper #emailsubscribe, #savesearch-wrapper-clone #emailsubscribe-clone {
+	display:none;
+	margin:10px 0 12px 0;
+}
+#emailsubscribe-label,#emailsubscribe-label-clone {
+	margin:3px 5px 0 0;
+	float:left;
+}
+#emailsubscribe-email,#emailsubscribe-email-clone {
+	width:184px;
+	font-size:12px;
+	float:left;
+	margin-right:5px;
+	float:left;
+}
+#noresults-subscribe #emailsubscribe-noscript p,#noresults-subscribe #emailsubscribe-noscript-clone p {
+	position:absolute;
+	top:76px;
+	color:#EF0E0E;
+}
+#savesearch-wrapper #emailsubscribe-noscript p, #savesearch-wrapper #emailsubscribe-noscript-clone p {
+	padding-top:10px;
+	color:#EF0E0E;
+}
+/* Universal */
+script {
+	height:0;
+}
+
+/* Social Subscribe */
+.frmSocialSubscribe {
+	background-color: #FFF;
+	display: none;
+	margin-left: 30px;
+	padding : 0;
+	position: absolute;
+	z-index: 1000;
+}
+
+.socialSubscribeButton {
+	text-decoration: none;
+	font-weight: normal;
+	max-width: 534px;
+}
+
+.socialSubscribeButton a.ssbShowHide {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.socialSubscribeButton a.ssbShowHide img.expose {
+	margin-left: 2px;
+	vertical-align: middle;
+}

@@ -1,0 +1,41 @@
+arquitecto java 39000 euros
+
+programador java 23000 euros
+
+programador php 21630 euros
+
+
+analista programador j2ee 27000 euros
+
+
+tester 24290 euros
+
+Ingeniero de Pruebas  27750 euros
+
+qa tester 24000 euros
+
+
+I think "Senior Tester" means the experience of working in different projects, that use different technologies. That means the tester has faced to various situations and problems that arise during development process, and most likely knows how to resolve them, is able to figure out the most effective solution. So, it' s not about definite amount of years worked in testing, is rather about experience itself. Also I think senior tester should be able to teach junior testers, to lead.
+
+
+Oracle Certified Associate, OCAJP
+Código del examen: 1Z0-803
+Denominación del Examen: Java SE 7 Programmer I
+
+
+
+Oracle Certified Professional Java Programmer 7.
+
+Código del examen: 1Z1-804
+Denominación del Examen: Java SE 7 Programmer II
+Nombre de la Certificación: Oracle Certified Associate, Java SE 7 Programmer.
+
+
+
+310-065 and 1Z0-851 (java6)
+
+
+
+http://enthuware.com/index.php/ocajp-7-average-scores
+
+

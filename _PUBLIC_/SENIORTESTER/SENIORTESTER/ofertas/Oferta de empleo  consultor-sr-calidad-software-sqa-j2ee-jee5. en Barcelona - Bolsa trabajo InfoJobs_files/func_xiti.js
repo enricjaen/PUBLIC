@@ -1,0 +1,1 @@
+var jsXiti=function(){return{incXitiCounterAction:function(b,c,a){return xt_click(b,"C",c,a,"A")},incXitiCounterDescarga:function(b,c,a){return xt_click(b,"C",c,a,"T")},incXitiCounterNavigationLink:function(b,c,a){return xt_click(b,"C",c,a,"N")},incXitiCounterNavigation:function(b,c,a){return xt_form(b,"C",c,a,"N",true)}}}();

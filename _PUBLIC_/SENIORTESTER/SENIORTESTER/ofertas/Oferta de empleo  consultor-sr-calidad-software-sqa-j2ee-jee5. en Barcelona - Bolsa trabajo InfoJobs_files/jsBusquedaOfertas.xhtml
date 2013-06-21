@@ -1,0 +1,911 @@
+
+	var defaultAjaxParams = null;
+		
+	$(function(){
+		// Bind a callback that executes when document.location.hash changes.
+		$(window).bind( "hashchange", function(e) {	
+			var firstLoad = false;
+			if( defaultAjaxParams == null ){
+				defaultAjaxParams = getParams(new RelaunchForm('form_relaunch'));
+				defaultAjaxParams["ajax"] = true;
+				firstLoad = true;
+			}
+			
+			if( $.bbq ){
+				if( $.bbq.getState( "ajax" ) ){ 
+					setParamsFromHistoryAndSendAjax();
+				}			
+				else if( !firstLoad ){
+					setParamsFromHistoryAndSendAjax(defaultAjaxParams);
+				}
+			}
+		});
+		
+		$(window).trigger( "hashchange" );
+	});
+	
+			
+	function setParamsFromHistoryAndSendAjax(params){ 
+		var formId = $.bbq.getState( "formId" );
+		if( formId == null ) {
+			formId = 'form_relaunch';
+		}
+		relaunch = new RelaunchForm(formId);
+		var form = $('#'+relaunch.formId)[0];	
+		if( params == null ) {
+			params = $.bbq.getState();
+		}
+		
+		var paramName;
+   		for (var prop in params) {
+   			elem = document.getElementById(getLongParamName(prop)); 
+   			if( elem != null ){
+				elem.setAttribute('value',params[prop]);
+			}
+		}
+		
+		aux = params[ getCompactParamName("scrollTop") ];
+		if( aux != null ){
+			relaunch.setScrollTop( aux );
+		}
+						
+		sendByAjax( relaunch );
+		loadBannersByAjax(relaunch);
+	
+	}
+	
+	function loadBannersByAjax(relaunch) {
+		try {
+			var form = $('#'+relaunch.formId);
+			var serializedForm = form.serialize();
+			infojobs.banner.loadBannersAjax(serializedForm);
+		} catch (e) {}
+	}
+		
+		
+	function ItemForm(fieldId, fieldValue) {
+		this.fieldId = fieldId;
+		this.fieldValue = fieldValue;
+		if (arguments.length == 3) {
+			this.fieldName = arguments[2];
+		}
+	}
+	
+	function RelaunchForm(formId) {
+		this.fields = new Array();
+		this.initFields = new Array();
+		this.initPaging = false;
+		this.formId = formId;
+		this.newFields = new Array();
+		this.init();
+		this.action = "";
+		this.ajax = false; 
+		this.scrollTop = false; 
+	}
+	
+	var ajaxTimeout = null;
+	
+	RelaunchForm.prototype = {
+		addField: function(id, value, name) {
+			this.newFields[this.newFields.length] = new ItemForm(id,value,name);
+		},
+		setField: function(id, value) {
+			this.fields[this.fields.length] = new ItemForm(id,value);
+		},
+		setInitPaging: function(initPaging) {
+			this.initPaging = initPaging;
+		},
+		setInitField: function(id, value) {
+			this.initFields[this.initFields.length] = new ItemForm(id,value);
+		},
+		setAction: function(action) {
+			this.action = action;
+		},
+		setAjax: function(ajax) {
+			this.ajax = ajax;
+		},	
+		setScrollTop: function(scroll) {
+			this.scrollTop = scroll;
+		},	
+		launch: function() {
+			
+			///////////////////////////7
+			for (i=0; i < this.fields.length; i++) {
+				elemId = this.fields[i].fieldId;
+				elemValue = this.fields[i].fieldValue;
+				$("#"+elemId).attr('value',elemValue);
+			}
+			if (this.initPaging) {
+				for (i=0; i < this.initFields.length; i++) {
+					elemId = this.initFields[i].fieldId;
+					elemValue = this.initFields[i].fieldValue;
+					$("#"+elemId).attr('value',elemValue);
+				}
+			}
+			
+			for (i=0; i < this.newFields.length; i++) {
+				var hidden = document.createElement('input') 
+				hidden.type='hidden'; 
+				hidden.value = this.newFields[i].fieldValue;
+				hidden.id = this.newFields[i].fieldId;
+				hidden.name = this.newFields[i].fieldName;
+				document.getElementById(this.formId).appendChild(hidden);
+			}
+			
+			if (this.action != "") {
+				document.getElementById(this.formId).action = this.action;
+			}		
+			
+			if(this.ajax){
+				if( ajaxTimeout != null ){
+					clearTimeout(ajaxTimeout);
+				}
+				var form = this;
+				ajaxTimeout = setTimeout(function(){
+											sendByAjaxWithHistory(form); 
+										 },1000);
+			}
+			else{
+				sendBySubmit(this); 
+			}				
+		},
+		
+		init: function() {
+			this.setInitField('item_inicio',1);
+		}
+	}
+	
+	function sendByAjaxWithHistory(form){
+		var params = getParams(form);
+		
+		params["ajax"] = true;
+		if( form.scrollTop ) {
+			params["scrollTop"] = true;
+		}
+		params["formId"] = form.formId;
+		$.bbq.pushState( params );
+	}
+	
+	function getParams(form){
+		var params = {};
+		form = $('#'+form.formId)[0];
+		for(j=0; j<form.elements.length; j++){
+			id = form.elements[j].id;
+			value = form.elements[j].value;
+			
+			params[getCompactParamName(id)] = value;
+		}
+		return params;
+	}
+	
+	var compactNames = new Array();
+	var index = 0;	
+	compactNames[++index] = "item_inicio";
+	compactNames[++index] = "item_resultados";
+	compactNames[++index] = "item_palabra";
+	compactNames[++index] = "item_of_area";
+	compactNames[++index] = "item_of_pais";
+	compactNames[++index] = "item_of_provincia";
+	compactNames[++index] = "item_tipo_contrato";
+	compactNames[++index] = "item_remuneracion_minima";
+	compactNames[++index] = "item_remuneracion_maxima";
+	compactNames[++index] = "item_remuneracion_formato";
+	compactNames[++index] = "item_antiguedad";
+	compactNames[++index] = "item_experiencia";
+	compactNames[++index] = "item_ett";
+	compactNames[++index] = "item_seleccion";
+	compactNames[++index] = "item_orden";
+	compactNames[++index] = "item_default_order";
+	compactNames[++index] = "item_nivel_estudios";
+	compactNames[++index] = "item_jornada_laboral";
+	compactNames[++index] = "item_subcategoria";
+	compactNames[++index] = "item_origen_busqueda";
+	compactNames[++index] = "item_origen_accion";
+	compactNames[++index] = "item_canal";
+	compactNames[++index] = "item_query";
+	compactNames[++index] = "item_poblacionIdGEO";
+	compactNames[++index] = "item_poblacionGEO";
+	compactNames[++index] = "item_radioGEO";
+	compactNames[++index] = "item_upsellings";
+	compactNames[++index] = "item_nombre";
+	compactNames[++index] = "item_periodicidad";
+	compactNames[++index] = "item_accion";
+	compactNames[++index] = "item_subSegmento";
+	compactNames[++index] = "item_puestoNormalizado";
+	
+	function getCompactParamName(paramName){
+		for(i = 0 ; i < compactNames.length ; i++ ){
+			if( compactNames[i] == paramName ){
+				return "f" + i;
+			}
+		}
+		return paramName;
+	}
+	
+	function getLongParamName(compactName){
+		if( compactName.length > 1 && compactName.charAt(0) == 'f' ){
+			return compactNames[compactName.substring(1)];
+		}
+		else{
+			return compactName;
+		}
+	}
+	
+	function sendBySubmit(relaunchForm){
+		$('#ajax').val(0);
+		document.getElementById(relaunchForm.formId).submit();
+	}
+	
+	var logos = "";
+	
+	function sendByAjax(relaunchForm){
+		var form = $('#'+relaunchForm.formId);
+		var url = form.attr('action');		
+
+		setOrCreateParamValue('ajax', '1', form);
+		var dgv = getDgv();
+		setOrCreateParamValue('dgv', dgv, form);
+		
+		if( logos == "" ){
+			logos = $('#h-banners-centrado').html();
+		}
+		
+		$('#loading').addClass('show');
+		
+		$.ajax({
+				type: 'POST',
+				url: url,
+				data: $(form).serialize(),				 
+				success: function (result){
+							//Control por si expira la sesion, si el resultado de vuelta de la peticion ajax es vacio -> recargamos la pagina
+							if(result.length==0){
+								sendBySubmit(relaunchForm);
+								return true;
+							}
+							
+							//Recuperamos el html de resultados de busqueda por zonas
+							var newH1 = getHtml(result,'H1');
+							var orderBy = getHtml(result,'order-by');
+							var newSideContent = getHtml(result,'side-content');
+							var newMainContent = getHtml(result,'main-content');
+							var newNavegacion = getHtml(result,'navegacion');
+							var metrics = getHtml(result,'metrics');
+														 				
+							//Pintamos cada zona de resultados de busqueda
+				 			$('#ajax-h1').html(newH1);
+				 			$('#ajax-order-by').html(orderBy);
+				 			$('#ajax-side-content').html(newSideContent);
+				 			$('#ajax-main-content').html(newMainContent);
+				 			$('#ajax-navegacion').html(newNavegacion).append(metrics); //Navegacion y metricas
+				 						
+				 			if( relaunchForm.scrollTop ){
+					 			//Anchor al h1 de resultados		 			
+								$(document).scrollTop( $("#ajax-h1").offset().top );
+							}
+				 			
+				 			//Volvemos a pintar los banners
+							$('#h-banners-centrado').html(logos);
+							
+							//Ocultamos el loading
+							$('#loading').removeClass('show');
+			   			 },
+			   	error: function (error){
+			   				sendBySubmit(relaunchForm);
+			   		   }
+		});
+	}
+	
+	function getHtml(html,reference){
+		var result = '';
+		var ini = html.indexOf('<!--'+ reference +'-->');
+		var fin = html.indexOf('<!--/'+ reference +'-->');
+		if(ini!=-1 && fin!=-1){
+			result = html.substring(ini,fin);	
+		}
+		else{
+			console.log('No se encuentra la referencia:'+reference);
+		}
+		
+		return result;	
+	}
+	
+	function setOrCreateParamValue(paramId, paramValue, objectToAppend, type){
+		var param = $(objectToAppend).find('#'+paramId);
+		if(param.size()==0){
+			if(typeof type==='undefined'){
+				$(objectToAppend).append('<input type="hidden" id="'+paramId+'" name="'+paramId+'" value="'+paramValue+'" />');
+			}
+			else if(type=='form'){
+				$(objectToAppend).append('<form id="'+paramId+'" name="'+paramId+'" method="post"></form>');
+			}
+			else{
+				$(objectToAppend).append('<input type="'+type+'" id="'+paramId+'" name="'+paramId+'" value="'+paramValue+'" />');
+			}
+			param = $(objectToAppend).find('#'+paramId);
+		}
+		else{
+			param.val(paramValue);
+		}
+		
+		return param;
+	}
+
+	function relaunchView(field, value) {		
+		view_item = new RelaunchForm('form_link');
+		view_item.setField(field,value);
+		if (arguments.length == 3) {
+			view_item.setAction(arguments[2]);
+		}
+		view_item.launch();
+	}
+
+	function relaunchViewAddField(field, value) {		
+		view_item = new RelaunchForm('form_link');
+		//If exists a field in the form with the same name,
+		//we overwrite its value
+		if( document.getElementById(view_item.formId)[field] ){
+			document.getElementById(view_item.formId)[field].value = value;
+		}
+		else{
+			//If not exists, we add it.
+			view_item.addField(field,value,field);
+		}
+		if (arguments.length == 3) {
+			view_item.setAction(arguments[2]);
+		}
+		view_item.launch();
+	}	
+	
+	function relaunchOrder(field, value, canalId, bOwnResults) {
+		order_item = new RelaunchForm('form_relaunch');
+		order_item.setField(field,value);
+		order_item.setInitPaging(true);
+		order_item.setField("item_origen_accion",5);
+		
+		var defaultOrder = document.getElementById("item_default_order");
+		if(defaultOrder!=null && typeof defaultOrder != 'undefined'){
+			order_item.setField("item_default_order",'false');
+		}	
+		
+		order_item.setAjax(true);
+		order_item.launch();
+	}	
+	
+	
+	function relaunchNavigator(navigator, valor, source) {		
+		relaunch = new RelaunchForm('form_relaunch');
+		var origenAcccion = 0;
+		switch(navigator) {
+			case 10:
+					relaunch.setField(
+						getFieldByNavigator(2),
+					'0');
+
+				relaunch.setField("item_radioGEO",0); 
+				relaunch.setField("item_poblacionGEO",'');
+				relaunch.setField("item_poblacionIdGEO",0);
+				
+				origenAccion = 3010;
+				break;
+			case 2:
+				relaunch.setField("item_radioGEO",0); 
+				relaunch.setField("item_poblacionGEO",'');
+				relaunch.setField("item_poblacionIdGEO",0);
+				
+				origenAccion = 3002;
+				
+				break;
+			case 3:
+				<!--if (valor == 0) {-->
+
+					relaunch.setField(
+						getFieldByNavigator(4),
+						'0');
+				<!--}-->
+				
+				origenAccion = 3003;
+				
+				break;		
+			case 4:
+				if (valor != 0) {
+					relaunch.setField(
+							getFieldByNavigator(3),
+							'0');
+				}
+				
+				origenAccion = 3004;
+				
+				break;
+			case 8:
+				//Se recupera como añadido el formato, mas adelante, por defecto el campo del navegador que es salario minimo				
+				relaunch.setField("item_remuneracion_formato",$('#oferta_sueldoPeriodoId').val());
+				origenAccion = 3008;
+						
+				break;		
+			case 1:
+				relaunch.setField("item_radioGEO",0);
+				relaunch.setField("item_poblacionIdGEO",0);
+								
+				origenAccion = 3001;
+				
+				break;
+			case 5:
+			
+				origenAccion = 3005;				
+				break;
+			case 9:
+			
+				origenAccion = 3009;				
+				break;
+			case 7:
+			
+				origenAccion = 3007;				
+				break;
+			case 6:
+			
+				origenAccion = 3006;				
+				break;		
+
+			case 12:
+
+				origenAccion = 3012;				
+				break;
+
+			case 13:
+
+				origenAccion = 3013;
+				break;
+
+			case 11:
+				if (valor == 1) {
+					relaunch.setField("item_upsellings", 63);
+				} else {
+					relaunch.setField("item_upsellings", -3);
+				}
+				origenAccion = 3011;				
+				break;
+		}
+		checkSource(source);
+		relaunch.setField("item_origen_accion", origenAccion);
+		var value = "";
+		if( navigator == 12 ){
+			value = valor;
+		}
+		else if( navigator == 8 ){
+			value = getSalarioValue(navigator);
+		}
+		else{
+			value = getMultiSelectValue(navigator);
+		}
+
+		relaunch.setField(getFieldByNavigator(navigator),value);
+		relaunch.setInitPaging(1); //Al lanzar una nueva búsqueda se va a la primera página.
+			setActionSearchResults(relaunch);
+		relaunch.setAjax(true);
+		relaunch.launch();
+	}
+	
+	function getMultiSelectValue(navigator){
+		var navigatorObject = $( "[name='nav_" + navigator + "']" ).filter(':checked');
+		var values = "";
+		var separator = ",";		
+		if( navigator == 1 ){
+			separator = "##";
+		}
+		if(navigatorObject.length>0){
+			for( i = 0; i < navigatorObject.length ; i++){
+				values += navigatorObject[i].value;
+				if( i+1 < navigatorObject.length ){
+					values += separator;
+				}
+			}	
+		}
+		
+		return values;
+	}
+	
+	function getSalarioValue(navigator){
+		var values = "";
+		var field = getFieldByNavigator(navigator);
+		var f = $('#'+field);
+		if(f.size()>0){
+			values = f.val();
+		}
+		return values;
+	}
+	
+	
+	function isCheckbox(navigator){
+		var navigatorObject = $( "[name='nav_" + navigator + "']" );	
+		if( navigatorObject.length > 0){
+			return navigatorObject.get(0).type == "checkbox";
+		}
+		return false;
+	}
+	
+	function checkSource(source){
+		if( source ){
+			var checkbox = $(source).parent().prev();
+			checkbox.attr("checked", !checkbox.attr("checked"));
+		}
+	}
+	
+	function getSalarioMaximoFromString(valor) {
+		var salarioRange = valor.substring(1, valor.length - 1).split(';');
+		var salarioMaximo = "0";
+ 		if (salarioRange.length > 1) {
+			if (salarioRange[1] != "") {
+				salarioMaximo = salarioRange[1];
+			}
+		} 		
+		return salarioMaximo;
+	}
+	
+	function getSalarioMinimoFromString(valor) {
+		var salarioRange = valor.substring(1, valor.length - 1).split(';');
+		var salarioMinimo = "0";
+
+		if (salarioRange.length > 0) {
+			if (salarioRange[0] != "") {
+				salarioMinimo = salarioRange[0];
+			}
+		} 
+		return salarioMinimo;
+	}
+	
+	function getFieldByNavigator(navigator) { 
+		switch (navigator) {
+			case 1:
+				return "item_poblacionGEO";
+			case 2:
+				return "item_of_provincia";
+			case 3:
+				return "item_of_area";
+			case 4:
+				return "item_subcategoria";
+			case 5:
+				return "item_nivel_estudios";
+			case 6:
+				return "item_tipo_contrato";
+			case 7:
+				return "item_jornada_laboral";
+			case 8:
+				return "item_remuneracion_minima";
+			case 9:
+				return "item_experiencia";
+			case 10:
+				return "item_of_pais"
+			case 11:
+				return "item_upsellings" 
+			case 12:
+				return "item_antiguedad" 
+			case 13:
+				return "item_subSegmento"
+			default:
+				return "";
+		}
+	}
+	
+	function showHide(navigator) {
+		var navUl = document.getElementById("nav" + navigator);
+		var liParent = navUl.parentNode;
+		
+		var aDivs = liParent.getElementsByTagName("h3"); 
+		
+		var estado = 1;
+		if (aDivs[0].className == 'option-collapsed') {
+			aDivs[0].className = 'option-expanded';
+			navUl.style.display = 'list-item';
+			estado = 1;
+		} else {
+			aDivs[0].className = 'option-collapsed';
+			navUl.style.display = 'none';
+			estado = 0;
+		}
+		
+		updateCookieNavigators(navigator, estado);
+	}
+	
+	function initializeCookieNavigators() {
+		//Se crea una nueva cookie
+		var aNavigators = new Array();
+		
+			var iNavigator = 1;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 2;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 5;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 9;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 6;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 7;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 10;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 13;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+			var iNavigator = 3;
+			var navDiv = document.getElementById("nav" + iNavigator);		
+			if (navDiv) {
+				if (navDiv.style.display == 'none') {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 0;
+				} else {
+					aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+				}
+			} else {
+				aNavigators[iNavigator-1] = iNavigator + ":" + 1;
+			}
+		
+		sValue = "";
+		for(var i=0; i < aNavigators.length; i++) {		
+			if (i > 0) {
+				sValue = sValue + ",";
+			}
+			sValue = sValue + aNavigators[i];
+		}
+		SetCookie("IJ.BusquedaOfertas.Navigators",sValue,null,"/");
+	}
+	
+	function updateCookieNavigators(navigator,estado) {
+		var cookieNavigators = GetCookie("IJ.BusquedaOfertas.Navigators");
+		if (!cookieNavigators) {
+			initializeCookieNavigators();
+		} else {
+			var aNavigators = cookieNavigators.split(',');
+			
+			aNavigators[navigator-1] = navigator + ":" + estado;
+		
+			sValue = "";
+			for(var i=0; i < aNavigators.length; i++) {		
+				if (i > 0) {
+					sValue = sValue + ",";
+				}
+				sValue = sValue + aNavigators[i];
+			}
+			SetCookie("IJ.BusquedaOfertas.Navigators",sValue,null,"/");
+		}
+		
+
+	}
+	
+	function initializeShowHideNavigators() {
+		var cookieNavigators = GetCookie("IJ.BusquedaOfertas.Navigators");
+
+		if (!cookieNavigators) {
+			return;
+		}
+		var aNavigators = cookieNavigators.split(',');
+		for(var i=0; i < aNavigators.length; i++) {		
+			var navigator = aNavigators[i].split(':');
+			var navigatorId = navigator[0];
+			if (navigator[1]==0) {//Si tiene que estar desplegado llamamos a la función showHide para que lo pliegue.
+				var navDiv = document.getElementById("nav" + navigatorId);		
+				if (navDiv) {
+					showHide(navigatorId);
+					//navDiv.style.display = 'none';
+					//imgNav.src = "<cfset out.writeImagePath()>/flecha_07_01.gif";		
+				}
+			}
+		}
+	}
+	
+	
+	
+	function toggleMasMenos(navegador) {
+		
+		var oNav = document.getElementById("nav" + navegador);
+		var oNavSelected = document.getElementById("nav" + navegador+"_selected");
+		var oLinkMasMenos = document.getElementById("linkMasMenos" + navegador).getElementsByTagName("a")[0];
+		var iDefaultItems = 4;
+		if(oNavSelected != null){
+			iDefaultItems -= 1;
+		}
+		var bMasOpt = true;
+		
+		var aItems = oNav.getElementsByTagName("li");
+		if (oLinkMasMenos.innerHTML.search("menos") >= 0) {
+			oLinkMasMenos.innerHTML = "[Mostrar m&aacute;s]";			
+			bMasOpt = false;			
+		} else {
+			oLinkMasMenos.innerHTML = "[Mostrar menos]"; 
+		}
+		
+		for (var i=iDefaultItems; i<aItems.length-1; i++) {
+			if (bMasOpt) {
+				aItems[i].className = "";
+			} else {
+				aItems[i].className = "hide";
+			}
+		}
+	}
+	
+	function setActionSearchResults(form) {	
+		form.setAction("/jobsearch/search-results/list.xhtml");
+	}
+	
+	function relaunchBusquedaAvanzada() {	
+		relaunch = new RelaunchForm('form_relaunch');
+		relaunch.setAction("/jobsearch/jobs-advanced-search/edit.xhtml");
+		relaunch.launch();
+	}
+	
+	function relaunchResults() {
+		relaunch = new RelaunchForm('form_relaunch');
+		relaunch.launch();	
+	}
+	
+	function relaunchResultsNav() {
+		relaunch = new RelaunchForm('form_relaunch');
+		//Se añade origen acción nueva búsqueda de ofertas dentro del contexto de una navegación.
+		relaunch.setField('item_origen_accion','10');
+		relaunch.launch();	
+	}
+	
+	function relaunchGeoSearch(poblacionId,radio,poblacion) {
+		relaunch = new RelaunchForm('form_relaunch');
+		relaunch.setField("item_radioGEO",radio);
+		relaunch.setField("item_poblacionIdGEO",poblacionId);
+		relaunch.setField("item_poblacionGEO",poblacion);
+		if (arguments.length == 4) { // Este cuarto parámetro nos indica si estamos en una nueva búsqueda o no.
+			if (arguments[3] == false) {//Si se considera que no es una nueva búsqueda le ponemos origen-accion = navegador.
+				var origenAccion = 3001;
+				relaunch.setField("item_origen_accion",origenAccion);
+			}
+		}
+		relaunch.setAjax(true);
+		relaunch.launch();	
+	}
+	
+	function relaunchRSS() {
+		relaunch = new RelaunchForm('form_relaunch');
+		relaunch.setAction("/candidate/rss/jobs-feed.xhtml");
+		relaunch.launch();	
+	}
+	
+	function relauchSaveSearch() {
+		relauchSaveSearch('');
+	}
+	function relauchSaveSearch(quitarMensaje) {
+		relaunch = new RelaunchForm('form_relaunch');
+		relaunch.setAction("/candidate/save-search/new_edit_save.xhtml");	
+		//relaunch.setAction("candidato_guardar_busqueda_propia.cfm");	
+		relaunch.addField("item_accion","SAV","accion");			
+		relaunch.addField("item_quitarMensaje",quitarMensaje,"quitarMensaje");
+		relaunch.launch();	
+	}
+	
+	function getUrlResultadosPropios() {
+		return "/jobsearch/channel/list.xhtml";
+	}
+	
+	function resetMultiNavigator(nav , defaultValue){
+		var navId = getFieldByNavigator(nav);
+		$('[name="nav_' + nav + '"]').attr('checked', false);
+		relaunchNavigator(nav,defaultValue);		
+	}
+	
+	function relaunchAlternativa(alternativa) {
+		switch (alternativa) {
+			case 3:
+				relaunchNavigator(3,'0');		
+				break;
+			case 9:
+				relaunchNavigator(9,'0');
+				break;
+			case 7:
+				resetMultiNavigator(7,'0');
+				break;
+			case 5:
+				relaunchNavigator(5,'0');
+				break;
+			case 10:
+				resetMultiNavigator(10,'0');
+				break;
+			case 1:			
+				resetMultiNavigator(1,'');
+				break;
+			case 2:
+				resetMultiNavigator(2,'0');
+				break;
+			case 8:
+				$('#oferta_sueldoCantidadMinId').val('0');
+				launchSalarioMin();
+				relaunchNavigator(8,'0');
+				break;
+			case 4:	
+				relaunchNavigator(4,'0');
+				break;
+			case 6:					
+				resetMultiNavigator(6,'0');
+				break;
+			case 11:					
+				relaunchNavigator(11,'0');
+				break;
+			case 13:					
+				relaunchNavigator(13,'-2147483648');
+				break;	
+				
+		}
+	}
+	
+	function setCookieOrigenInicio(origenInicio) {
+		SetCookie("IJ.BusquedaOfertas.OrigenInicio",origenInicio,null,"/");
+	}
+	
+	function setCookieQueryId(querId) {
+		SetCookie("IJ.BusquedaOfertas.IdBusqueda",querId,null,"/");
+	}

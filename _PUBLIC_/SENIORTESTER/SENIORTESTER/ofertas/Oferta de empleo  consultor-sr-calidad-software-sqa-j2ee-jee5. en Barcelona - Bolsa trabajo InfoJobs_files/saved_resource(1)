@@ -1,0 +1,16 @@
+ HEIAS_T=Math.random();HEIAS_T=HEIAS_T*10000000000000000000;var heias_ref='-';try{heias_ref=escape((document.location==top.document.location)?document.location:top.document.location);}catch(h_err1){heias_ref='-'} 
+if(parent==top && heias_ref=='-') {heias_ref = escape(document.referrer);} window.heias_ref = heias_ref;
+if (typeof heias_wp != 'undefined' && heias_wp == true) {	var h_wp='|;|h_wp|;|true';} else { h_wp='';} 
+if (typeof h_d != 'undefined' && h_d == true) {	var h_d='|;|h_d|;|true';} else { h_d='';} 
+if (typeof h_tpl_id != 'undefined' && h_tpl_id != '') {	var h_tpl_id='|;|h_tpl_id|;|'+h_tpl_id;} else { h_tpl_id='';} 
+if (typeof document.HEIAS_c_exclude != 'undefined' && document.HEIAS_c_exclude) {	var HEIAS_c_exclude='|;|c_exclude|;|' + document.HEIAS_c_exclude;} else { HEIAS_c_exclude='';} 
+if (typeof h_recom_product_id != 'undefined' && h_recom_product_id != '') {	var h_recom_product_id='|;|h_recom_product_id|;|'+h_recom_product_id;} else { h_recom_product_id='';} 
+if (typeof pos_x != 'undefined' && pos_x != '') {	var pos_x='|;|pos_x|;|'+pos_x;} else { pos_x='';} 
+if (typeof pos_y != 'undefined' && pos_y != '') {	var pos_y='|;|pos_y|;|'+pos_y;} else { pos_y='';} 
+
+if (typeof screen.width != 'undefined') {	var screenwidth=screen.width;} else { screenwidth='';}
+if (typeof screen.height != 'undefined') {	var screenheight=screen.height;} else { screenheight='';}
+
+var heias_fl_ver=0;try{heias_fl_ver=HEIAS_detect_flash();}catch(h_err2){heias_fl_ver=''} 
+var htc='|;|htc|;|'+h_count;
+document.write('<script type="text/javascript" src="http://ads.heias.com/x/heias.TAG.v2.0/tag.php?H_VAR=h_ref|;|'+escape(heias_ref)+'|;|HT|;|'+HEIAS_T+h_wp+h_d+h_tpl_id+htc+pos_x+pos_y+h_recom_product_id+HEIAS_c_exclude+'|;|c|;|3|;|s|;|18584|;|fl_ver|;|'+heias_fl_ver+'|;|js_var|;|'+screenwidth+','+screenheight+','+navigator.cookieEnabled+'|;|huk|;|136917211361495824647|;|heias_rdc|;|"></script>');

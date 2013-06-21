@@ -1,0 +1,41 @@
+
+dev life cycle
+
+ferrari
+
+
+waterfall -> test al final
+
+v model -> se preparan tests en cada etapa. Pero test aceptacion al final
+
+ciclico -> tests de aceptacion incrementales
+
+
+dummy
+
+v model 
+  - reqs spec  -> proposito
+  - functional spec -> funcionalidades, dialogos
+  - tech spec -> division en subsistemas
+  - compo spec -> detalles de cada subsistema
+
+  - progr 
+
+verifi -> ver si cumple los requerimientos de cada fase
+valid -> ver si cumplelos requer del usuario
+
+test plan se hace al inicio, en paraleo al desarrollo
+
+cada nivel requiere diferentes metodos y tools
+
+ganar robustez con negative test -> tests especiales no mencionados en la spec.  generan excepcion
+
+
+NO big bang integration -> esperar a que todo este listo para integrar
+  
+
+system test 
+- prueba todos los componentes. valida los requerimientos funcio y no-funcion desde punto vista usuario
+- tambien es comprobarladocumetacion, manuales...
+- incluye perfomance testing
+- la informacon en bbdd es muy importante q sea la correcta (test data)

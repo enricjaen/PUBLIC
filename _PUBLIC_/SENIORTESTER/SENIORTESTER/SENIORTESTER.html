@@ -1,0 +1,870 @@
+﻿		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional //EN">
+		<HTML>
+		<HEAD>
+			<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+			<TITLE></TITLE>
+
+			<style type="text/css">
+
+			body {
+			/*background-color:#F89827; */
+			}
+
+			#contacte table td{
+				font-size:small;
+				font-style:bold
+
+			}
+
+			#navmenu {
+				background-color:black;
+				color:white;
+				font-size:small
+			}
+
+			#navmenu ul li {
+			  display:inline;
+			  }
+
+			#navmenu ul li a:visited{
+				color:white;
+			  }
+
+			#idiomes ul li {
+			  display:inline;
+			  }
+			.portalstable {
+			  width:100%;
+			  border-collapse:collapse
+			}
+
+			.menuportales {
+			   background-color:#d3f9bc;
+	  		   text-align:top;
+			   height:3000px;
+			}
+
+			iframe {
+				   height:3000px;
+				   border:5px solid #dcdcdc;
+				   background-color:white;
+				   /*background-image: url("loading.gif");
+				   background-repeat:no-repeat;
+				   background-position:50% 5%;*/
+			}
+
+
+			ul {
+			   list-style:none; /* Eliminamos los bullets */
+			   padding-left:10px;
+			}
+
+			li {
+			   margin-top:10;
+			   padding: 4px
+			}
+
+			a {
+			text-decoration:none;
+			color:black;
+			}
+
+			li:hover {
+			 background-color:#F89827;
+			}
+
+			a:visited {
+			color:black
+			}
+
+			.tachado {
+			text-decoration:line-through
+			}
+
+
+			.dataActualitzada {
+			font-size:11px;
+			font-style:italic
+			}
+
+			.dataNovetat {
+			font-size:small;
+			font-style:bold
+			}
+
+			.activeElem{
+			/*background-color:#F89827*/
+			}
+
+			.desactiveElem{
+			background-color:none
+			}
+
+			.categoria1Portal {
+			cursor:pointer;
+/*			color:#FFFFFF;*/
+			font-family:arial;
+			font-weight:bold;
+			text-decoration: underline;
+			font-size:80%;
+/*			background:#0099CC; */
+			padding:5px
+			}
+
+			.categoria2Portal {
+			font-family:arial;
+			font-size:small;
+			/*background:#F89827;*/
+			padding:5px;
+			text-align:right
+			}
+
+			.icono {
+				weight:30px;
+				width: 45px;
+			}
+
+			#novetats {
+			/*background-color:white;*/
+			height:170px;
+			overflow:auto;
+			}
+
+		    .properament {
+			   list-style:square;
+			   padding-left:10px;
+			}
+
+		    #properament ul li {
+			   font-size:small;
+			}
+
+            .check {
+              position:absolute;
+              right:0px;
+            }
+
+			img
+			{
+			  border:0;
+			}
+			
+			.followIcon {
+				weight:15px;
+				width: 15px;
+			}
+
+			.ambitEnllac {
+				weight:10px;
+				width: 10px;
+			}
+			
+			.profesion_div{
+				margin:10px;
+				font-size:small; 
+				line-height:150%; 
+		/*		background-color:#ffcc99 */
+			}
+			
+			.profession_text{
+				background-color:#dcdcdc;
+			}
+			
+			</style>
+
+
+		</HEAD>
+		<BODY LANG="es-ES" DIR="LTR">
+
+
+		<script language="JavaScript">
+			function ShowHide(divId) {
+				if(document.getElementById(divId).style.display == 'none') {
+					document.getElementById(divId).style.display='block';
+				}
+				else {
+					document.getElementById(divId).style.display = 'none';
+				}
+			}
+		</script>
+
+		<!-- se define la funcion activar elemento -->
+		<script type="text/javascript">
+
+		var activeElemId;
+
+		function activateElem(elemId) {
+		
+		  //se comprueba si ya esta activo, en ese caso no se a�ade el check visto
+			if(enlaceAunNoVisto(elemId)) {
+				marcarEnlaceVisto(elemId);
+			}
+
+		 //se activa el elemento seleccionado, y se desactiva el que ahora esta activo
+			document.getElementById(elemId).className="activeElem";
+			if(null!=activeElemId) {
+			document.getElementById(activeElemId).className="desactiveElem";
+			}
+			activeElemId=elemId;
+			ShowHide('menuPortales');
+			
+		}
+
+		function enlaceAunNoVisto(elemId) {
+			elem = document.getElementById(elemId)		
+			for(var i = 0; i < elem.children.length; i++){
+				if(elem.children[i].id == 'visto'){
+					return false;
+				}
+			}
+			return true;	
+		}
+
+		function marcarEnlaceVisto(elemId) {
+
+			var elem = document.getElementById(elemId);
+			elem.style.textDecoration="line-through";
+
+			var visto=document.createElement('visto');
+			visto.id="visto";
+			elem.appendChild(visto);
+	   }
+
+
+	   
+		function cambiaHRef(anchorId, url) {
+			var a = document.getElementById(anchorId);
+			a.href=url+'#';		
+		}
+
+		function obtenerProfesion() {
+			return document.getElementById('professio').value;
+		}
+		</script>
+
+
+
+
+
+		
+		
+	<br>
+
+		<!-- se define la pagina principal -->
+		<div align="right">by Enric Jaen Villoldo</div>
+		
+		<!-- se define la tabla de portales -->
+			<table class="portalstable">
+			<tr valign="top">
+
+			<td class="menuportales" id="menuPortales" >
+
+		 <p align="right" style="text-padding:0px; height:0px;  font-weight:bold; font-size:12px;"> <span id="avui" style="border:1px; color:#8C4619"></span></p>
+
+
+
+		<table id="tablaHome" style="padding:0px; border:0;  width:100%; padding-top:0px">
+		<tr style="padding:0px; border:0">
+		</tr>
+		<tr>
+		  <td>
+			<a href="index.html"> 
+			<h4>Como llegar a ser un Senior Tester</h4>
+			</a>
+		 </td>
+	</tr>
+		</table>
+
+
+
+		<script type="text/javascript">
+
+		function today(){
+		var currentDate = new Date()
+		  var day = currentDate.getDate()
+		  var month = currentDate.getMonth() + 1
+		  var year = currentDate.getFullYear()
+		  return day + "-" + month + "-" + year;
+		}
+
+		//se pone la fecha actual
+		var newdiv=document.createElement('div');
+		var text = document.createTextNode(today());
+		newdiv.appendChild(text);
+		var container = document.getElementById("avui");
+		container.appendChild(newdiv);
+
+
+		</script>
+
+		
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('at');">
+			Niveles profesionales<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="at" style="display:none">
+			<ul>
+			
+			<li id="p1">
+			<a  onclick="javascript:activateElem('p1');" href="http://googletesting.blogspot.com.es/2007/03/difference-between-qa-qc-and-test.html" target="portal"/>
+			The difference between QA, QC, and Test Engineering   (Google testing blog)
+			</a>
+
+			<li id="p2">
+			<a  onclick="javascript:activateElem('p2');" href="http://www.istqb.org/certification-path-root/foundation-level/foundation-level-in-a-nutshell.html" target="portal"/>
+			Test Designer
+			</a>
+	
+	
+			<li id="p4">
+			<a  onclick="javascript:activateElem('p4');" href="http://googletesting.blogspot.com.es/2007/03/difference-between-qa-qc-and-test.html" target="portal"/>
+			Test Engineer
+			</a>
+
+			<li id="p5">
+			<a  onclick="javascript:activateElem('p5');" href="http://googletesting.blogspot.com.es/2007/03/difference-between-qa-qc-and-test.html" target="portal"/>
+			Test Consultant
+			</a>			
+			
+			<li id="p6">
+			<a  onclick="javascript:activateElem('p6');" href="http://googletesting.blogspot.com.es/2007/03/difference-between-qa-qc-and-test.html" target="portal"/>
+			User acceptance Tester
+			</a>
+			
+			<li id="p33">
+			<a  onclick="javascript:activateElem('p33');" href="http://www.istqb.org/certification-path-root/advanced-level/advanced-level-technical-test-analyst.html" target="portal"/>
+			Techincal Test Analyst  (istqb)
+			</a>
+			
+			<li id="p3">
+			<a  onclick="javascript:activateElem('p3');" href="http://www.istqb.org/certification-path-root/advanced-level/advanced-level-test-analyst.html" target="portal"/>
+			Test Analyst (istqb)
+			</a>
+
+			<li id="p3">
+			<a  onclick="javascript:activateElem('p3');" href="http://www.istqb.org/certification-path-root/advanced-level/advanced-level-test-manager.html" target="portal"/>
+			Test Manager (istqb)
+			</a>
+
+			<li id="p7">
+			<a  onclick="javascript:activateElem('p7');" href="ofertas/SalariosTestersEspana-ES-V03.pdf" target="portal"/>
+			Salarios en España(2012)
+			</a>
+
+			<li id="p8">
+			<a  onclick="javascript:activateElem('p8');" href="http://www.indeed.com/salary/QA-Tester.html" target="portal"/>
+			Salarios en EEUU(indeed)
+			</a>
+			
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+
+
+		
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('o');">
+			Ejemplos de Ofertas<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="o" style="display:none">
+			<ul>
+			
+			<li id="o1">
+			<a  onclick="javascript:activateElem('o1');" href="file:///C:/enric/trabajo/ofertas/liferay.htm" target="portal"/>
+			Liferay
+			</a>
+			
+			<li id="o2">
+			<a  onclick="javascript:activateElem('o2');" href="file:///C:/enric/trabajo/ofertas/besdoctors.htm" target="portal"/>
+			Bestdoctors
+			</a>
+			
+			<li id="o3">
+			<a  onclick="javascript:activateElem('o3');" href="ofertas/bull.htm" target="portal"/>
+			Bull
+			</a>
+			
+
+			<li id="o4">
+			<a  onclick="javascript:activateElem('o4');" href="ofertas/microsoft.htm" target="portal"/>
+			microsoft
+			</a>			
+
+			<li id="o6">
+			<a  onclick="javascript:activateElem('o6');" href="ofertas/edreams.pdf" target="portal"/>
+			edreams
+			</a>			
+
+
+
+			<li id="o5">
+			<a  onclick="javascript:activateElem('o5');" href="http://www.linkedin.com/jsearch?keywords=test&searchLocationType=Y&countryCode=es&keepFacets=keepFacets&page_num=1&pplSearchOrigin=JSHP&sortCriteria=R#facets=keywords%3Dtest%26jobTitle%3D%26company%3D%26facetsOrder%3D%26pplSearchOrigin%3DFCTD%26search%3DB%25C3%25BAsqueda%26searchLocationType%3DY%26keepFacets%3Dtrue%26openFacets%3DNETWORK%252CCOMPANY%252CLOCATION%252CTIME_POSTED%26facet_LOCATION%3Des%253A0%26typeaheadHighlight%3Des%253A0" target="blank"/>
+			ofertas en España
+			</a>			
+
+			<li id="o7">
+			<a  onclick="javascript:activateElem('o7');" href="ofertas/strandslabs.htm" target="portal"/>
+			strandslabs
+			</a>			
+
+
+			<li id="o8">
+			<a  onclick="javascript:activateElem('o8');" href="http://workinqa.com" target="portal"/>
+			workinqa(portal Español)
+			</a>			
+
+			<li id="o9">
+			<a  onclick="javascript:activateElem('o9');" href="ofertas/xing.pdf" target="portal"/>
+			xing
+			</a>			
+			
+			
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+		
+
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('en');">
+			Prepararse entrevistas<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="en" style="display:none">
+			<ul>
+			
+			<li id="en1">			
+			<a  onclick="javascript:activateElem('en1');" href="http://sqa.fyicenter.com/FAQ/Software-QA-Testing/" target="portal"/>
+			Software Quality Assurance Interview Questions and Answers
+			</a>
+
+			<li id="en2">			
+			<a  onclick="javascript:activateElem('en2');" href="http://www.linkedin.com/groups/Que-pregunt%C3%A1is-en-una-entrevista-1779297.S.159304460?qid=2172451c-9310-4943-8cc6-7bab0cc6f1aa&trk=group_items_see_more-0-b-ttl" target="blank"/>
+			Que preguntar en una entrevista?
+			</a>
+			
+
+			<li id="en3">			
+			<a  onclick="javascript:activateElem('en3');" href="http://www.allinterview.com/showanswers/17032.html" target="blank"/>
+			test case for coffee machine?
+			</a>
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+		  
+		  
+		
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('doc');">
+			Documentos QA <a href="javascript:;"> </a></p>
+			</div>
+		   <div id="doc" style="display:none">
+			<ul>
+			
+			<li id="sqa1">
+			<a  onclick="javascript:activateElem('sqa1');" href="http://energy.gov/sites/prod/files/cioprod/documents/csr_sqa_plan.pdf" target="blank"/>
+			NASA SQA document
+			</a>
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+
+		  
+		   
+		  
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('cer');">
+			Certificaciones<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="cer" style="display:none">
+			<ul>
+			
+			<li id="c1">
+			<a  onclick="javascript:activateElem('c1');" href="http://www.istqb.org/" target="blank"/>
+				ISTQB (International Software Testing Qualifications Board)
+			</a>
+
+			<li id="c11">
+			<a  onclick="javascript:activateElem('c11');" href="http://www.sstqb.es/" target="portal"/>
+				SSTQB (Spanish Software Testing Qualification Board)
+			</a>
+			
+			
+		
+			<li id="c2">
+			<a  onclick="javascript:activateElem('c2');" href="" target="blank"/>
+				CISA (Certified Information Systems Auditor)	
+			</a>
+
+			
+			<li id="c4">
+			<a  onclick="javascript:activateElem('c2');" href="http://en.wikipedia.org/wiki/Test_Management_Approach" target="portal"/>
+				TMap (Test Management Approach)
+			</a>
+
+			<li id="c5">
+			<a  onclick="javascript:activateElem('c5');" href="http://www.agile-tester.org/" target="portal"/>
+				CAT (Certified Agile Tester)  ISQI (International Software Quality Institute)  
+			</a>
+							
+
+				
+				
+			<li id="c3">
+			<a  onclick="javascript:activateElem('c2');" href="http://www.javiergarzas.com/2012/05/certificaciones-profesionales.html" target="portal"/>
+				certificaciones-profesionales (javiergarzas)
+			</a>
+
+			
+			<li id="c6">
+			<a  onclick="javascript:activateElem('c6');" href="http://www.mtp.es/index.php/formacion/catalogo-cursos" target="portal"/>
+				MTP (consultora española q hace cursos)  
+			</a>
+
+			<li id="c7">
+			<a  onclick="javascript:activateElem('c7');" href="http://www.guru99.com/tests.html" target="portal"/>
+			  guru99 (mock examns)
+			</a>
+						
+
+			<li id="c8">
+			<a  onclick="javascript:activateElem('c8');" href="http://www.expoqa.com/trainings.php" target="portal"/>
+			  expoqa (acredidata por el SSTQB)
+			</a>
+												
+
+			<li id="c9">
+			<a  onclick="javascript:activateElem('c9');" href="http://asq.org/courses/outlines/software-quality-engineering_SQE.html" target="portal"/>
+			  SQE (software-quality-engineering)(ASQ, american society for quality)	
+			</a>
+												
+												
+
+			<li id="c10">
+			<a  onclick="javascript:activateElem('c10');" href="http://prdweb.asq.org/certification/control/quality-auditor/index" target="portal"/>
+			  quality auditor (ASQ, american society for quality)	
+			</a>
+
+			
+						
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('ist');">
+			Certificado ISTQB<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="ist" style="display:none">
+			<ul>
+
+			<li id="ist0">
+			<a  onclick="javascript:activateElem('ist0');" href="http://www.istqb.org/certification-path-root/foundation-level/foundation-level-in-a-nutshell.html" target="portal"/>
+			Certification path
+			</a>
+
+			
+			
+			<li id="ist1">
+			<a  onclick="javascript:activateElem('ist1');" href="http://www.sstqb.es/ficheros/sstqb_file95-a69acf.pdf" target="blank"/>
+			Programa de Estudio de Nivel Basico (2010)
+			</a>
+
+			
+			
+			<li id="ist2">
+			<a  onclick="javascript:activateElem('ist2');" href="http://www.sstqb.es/ficheros/sstqb_file93-ba548a.pdf" target="blank"/>
+			Programa de Estudio de Nivel Avanzado (2007)
+			</a>
+
+			<li id="ist3">
+			<a  onclick="javascript:activateElem('ist3');" href="http://www.istqb.org/certification-path-root/foundation-level/foundation-level-in-a-nutshell.html" target="portal"/>
+			Foundation Level 
+			</a>
+
+			<li id="ist4">
+			<a  onclick="javascript:activateElem('ist4');" href="http://www.istqb.org/certification-path-root/advanced-level/advanced-level-in-a-nutshell.html" target="portal"/>
+			Advanced Level (Technical Analyst, Analyst, Manager)
+			</a>
+	
+			<li id="ist44">
+			<a  onclick="javascript:activateElem('ist44');" href="http://www.istqb.org.cn/uploads/soft/20121023/istqbadv.pdf" target="portal"/>
+			Advanced Level (self study book 2012)
+			</a>
+				
+			
+			
+
+			<li id="ist5">
+			<a  onclick="javascript:activateElem('ist5');" href="http://www.istqb.org/certification-path-root/expert-level/expert-level-in-a-nutshell.html" target="portal"/>
+			Expert Level (improve testprocess, management, automantion, security)			
+			</a>
+			
+			
+			<li id="ist6">
+			<a  onclick="javascript:activateElem('ist6');" href="http://my.safaribooksonline.com/book/software-engineering-and-development/software-testing/9781933952789" target="portal"/>
+			Libro: Software Testing Foundations, 3th ed(2011)
+			</a>
+			
+						<li id="c7">
+			<a  onclick="javascript:activateElem('c7');" href="http://www.guru99.com/tests.html" target="portal"/>
+			  guru99 (mock examns)
+			</a>
+						
+
+			<li id="c8">
+			<a  onclick="javascript:activateElem('c8');" href="http://www.expoqa.com/trainings.php" target="portal"/>
+			  expoqa (acredidata por el SSTQB)
+			</a>
+
+			<li id="c9">
+			<a  onclick="javascript:activateElem('c9');" href="http://istqbsamplepaper.n18.in/" target="portal"/>
+			  examenes de prueba
+			</a>
+			
+			<li id="c10">
+			<a  onclick="javascript:activateElem('c10');" href="http://www.istqb.org/downloads/viewcategory/41.html" target="portal"/>
+			  otro examen de prueba
+			</a>
+
+			<li id="c11">
+			<a  onclick="javascript:activateElem('c11');" href="http://www.softwaretestingstuff.com/2008/12/qtp-cste-iseb-istqb-question-papers.html" target="portal"/>
+			  mas examenes de prueba
+			</a>
+						
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('hwb');">
+			White box testing<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="hwb" style="display:none">
+			<ul>
+			
+			<li id="w1">			
+			<a  onclick="javascript:activateElem('w1');" href="http://infinitest.github.io/" target="portal"/>
+			infinitest (java, eclipse)
+			</a>
+
+			<li id="w2">			
+			<a  onclick="javascript:activateElem('w2');" href="http://junit.org/" target="portal"/>
+			junit (java)
+			</a>
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('hbb');">
+			black box testing <a href="javascript:;"> </a></p>
+			</div>
+		   <div id="hbb" style="display:none">
+			<ul>
+			
+			<li id="hbb1">
+			
+			<a  onclick="javascript:activateElem('hbb1');" href="../atdd/ATDD.html" target="blank"/>
+			Acceptance testing 
+			</a>
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('l');">
+			Libros de testing<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="l" style="display:none">
+			<ul>
+			
+			<li id="l1">
+			
+			<a  onclick="javascript:activateElem('o1');" href="http://www.amazon.com/Continuous-Testing-Ruby-Rails-JavaScript/dp/1934356700" target="blank"/>
+			Continuous Testing: with Ruby, Rails, and JavaScript (2011,Pragmatic Bookshelf,Ben Rady Rod Coffin)
+			</a>
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('ic');">
+			Libros de Integracion Continua <a href="javascript:;"> </a></p>
+			</div>
+		   <div id="ic" style="display:none">
+			<ul>
+			
+			<li id="ic1">
+			<a  onclick="javascript:activateElem('ic1');" href="http://my.safaribooksonline.com/book/software-engineering-and-development/9781457169793" target="portal"/>
+			Integración continua con Hudson - Jenkins
+			</a>
+			
+			<li id="ic2">
+			<a  onclick="javascript:activateElem('ic2');" href="http://my.safaribooksonline.com/book/software-engineering-and-development/software-testing/9780321670250" target="portal"/>
+			Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation (2010)
+			</a>
+			
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('ju');">
+			Junit <a href="javascript:;"> </a></p>
+			</div>
+		   <div id="ju" style="display:none">
+			<ul>
+			
+			<li id="ju1">
+			
+			<a  onclick="javascript:activateElem('ju1');" href="https://github.com/junit-team/junit/wiki/_pages" target="blank"/>
+			junit wiki pages (github)
+			</a>
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+		  
+		  
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('asoc');">
+			asociaciones y grupos <a href="javascript:;"> </a></p>
+			</div>
+		   <div id="asoc" style="display:none">
+			<ul>
+			
+			<li id="asoc1">
+			<a  onclick="javascript:activateElem('asoc1');" href="http://es.testqa.org/" target="portal"/>
+			TestQA (bcn,España)
+			</a>
+			
+			<li id="asoc2">
+			<a  onclick="javascript:activateElem('asoc2');" href="http://es.testqa.org/" target="portal"/>
+			TestQA (bcn,España)
+			</a>
+
+			<li id="asoc3">			
+			<a  onclick="javascript:activateElem('asoc3');" href="http://www.expoqa.com" target="portal"/>
+			Expo:QA (España)
+			</a>
+
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('tm');">
+			software de test management <a href="javascript:;"> </a></p>
+			</div>
+		   <div id="tm" style="display:none">
+			<ul>
+			
+			<li id="tm1">
+			<a  onclick="javascript:activateElem('tm1');" href="http://www.softwaretestingstuff.com/2007/10/test-director.html" target="portal"/>
+			Test Director
+			</a>
+			
+			
+			<li id="tm2">
+			<a  onclick="javascript:activateElem('tm2');" href="http://www.etestinghub.com/testdirector.php" target="portal"/>
+			Test Director
+			</a>
+			
+			
+			<li id="tm3">
+			<a  onclick="javascript:activateElem('tm3');" href="http://www.opensourcetesting.org/testmgt.php" target="portal"/>
+			opensource Test Management 
+			</a>
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+				  
+		  
+		  
+		  
+		
+		
+			<br>
+
+			</td>
+
+			<!-- se define el panel abrir/cerrar -->
+			<td style="cursor:pointer; width:6%; border:0; background-image:url('anilla6d.jpg');background-repeat:no-repeat-y" onclick="javascript:ShowHide('menuPortales');">
+			<a href="javascript:;"> </a>
+			</td>
+			<!-- se define el panel frame -->
+
+			<script language="JavaScript">
+			function onLoadPortalFrame() {
+				window.scrollTo(0,0);
+
+			}
+			</script>
+
+			<!-- se define el frame para el portal. Se indica la proporcion -->
+			<td width="70%">
+			<iframe  src="home.html" width ="100%"  name="portal" onload="onLoadPortalFrame();">
+			</iframe>
+			</td>
+
+			</tr>
+			</table>
+
+		
+
+
+
+
+		</BODY>
+		</HTML>

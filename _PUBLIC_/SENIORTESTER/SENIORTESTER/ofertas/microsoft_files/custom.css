@@ -1,0 +1,1795 @@
+/* Reset */
+*, p, a, h1, h2, h3, h4, h5, h6 { margin:0;padding:0;font-weight:normal; }
+b { font-weight:bold; }
+u { text-decoration:underline; }
+/* Global.css Issue Resolution */
+html,body {
+	height:inherit;
+}
+/* Global.css Issue Resolution */
+
+/* Reset.css Issue Resolution */
+strong {
+	font-weight:bolder;
+}
+/* Reset.css Issue Resolution */
+a img {
+	border:0px none;
+}
+
+/*  Site Specs  */
+html {
+	background:#fff;
+}
+body {
+	background:transparent none;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:13px;
+}
+.outerShell {
+	background:transparent none;
+	width:100%;
+	margin:0 auto;
+	float:none;
+	border:0 none;
+}
+.innerShell, #innerShell {
+	background:transparent none;
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	float:none;
+	border:0 none;
+}
+.content, #content {
+	background:transparent none;
+	width:940px;
+	margin:0 auto;
+	padding:0;
+	float:none;
+	border:0 none;
+}
+.innerWidth {
+	background:transparent none;
+	width:940px;
+	margin:0 auto;
+	padding:0;
+	float:none;
+	border:0 none;
+}
+p {
+	font-size:13px;
+	line-height:22px;
+}
+li {
+	font-size:13px;
+	list-style:none;
+}
+h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a {
+	text-decoration:none;
+	color:#666;
+}
+a {
+	color:#00adef;
+	font-size:13px;
+	text-decoration:underline;
+}
+	a:hover {
+		text-decoration:none;
+	}
+.half {
+	width:49%;
+	float:left;
+}
+/*  End Site Specs  */
+
+/* Start Header */
+.header, #header {
+	background:transparent none;
+	border:0 none;
+	float:none;
+	margin:0 auto 30px;
+	width:940px;
+	position:relative;
+}
+	#header-main {
+		background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center bottom;
+		width:940px;
+		height:48px;
+		padding:30px 0;
+	}
+		#header-logo {
+			float:left;
+			display:block;
+		}
+		#header-join-logo {
+			background:transparent url(/sites/microsoft_global/images/rebrand/btn_talentNetwork.png) no-repeat 0 0;
+			float:right;
+			display:block;
+			width:302px;
+			height:48px;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+		}
+			#header-join-logo:hover {
+				background-position:0 -48px;	
+			}
+		#search-job-by {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_searchBy.png) no-repeat 0 0;
+			display:block;
+			width:58px;
+			height:15px;
+			float:left;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+			margin:10px 0 0 0;
+		}
+	#header-content {
+		background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center bottom;
+		width:940px;
+		height:38px;
+	}
+		.header .divider, #header .divider {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_vertDots.png) no-repeat 0 0;
+			float:left;
+			width:1px;
+			height:19px;
+			clear:none;
+			margin:0 10px;
+		}
+		#header-search-links {
+			float:left;
+			height:26px;
+			padding:12px 0 0 0;
+			margin:0;
+		}
+			#header-search-links li {
+				float:left;	
+			}
+				.header-search-link {
+					float:left;
+					background:transparent no-repeat -1px -1px;
+					height:15px;
+					display:block;
+					text-indent:-9999px;
+					font-size:0;
+					line-height:0;
+				}
+					.header-search-link:hover {
+						background-position:-1px -20px;
+					}
+						#header-profession-link {
+							background-image:url(/sites/microsoft_global/images/rebrand/btn_Profession.png);
+							width:77px;
+						}
+						#header-location-link {
+							background-image:url(/sites/microsoft_global/images/rebrand/btn_Location.png);
+							width:64px;
+						}
+						#header-division-link {
+							background-image:url(/sites/microsoft_global/images/rebrand/btn_Business.png);
+							width:126px;
+						}
+		#header-content-links {
+			float:right;
+			height:28px;
+			padding:10px 0 0 0;
+			margin:0;
+		}
+			#header-content-links li {
+				float:left;
+			}
+				.header-content-link {
+					float:left;
+					display:block;
+					background:transparent no-repeat 0 0;
+					height:19px;
+					text-indent:-9999px;
+					font-size:0;
+					line-height:0;
+				}
+					.header-content-link:hover {
+						background-position:0 -19px;
+					}
+						#header-life-link {
+							background-image:url(/sites/microsoft_global/images/rebrand/btn_Life.png);
+							width:112px;
+						}
+						#header-interview-link {
+							background-image:url(/sites/microsoft_global/images/rebrand/btn_interview.png);
+							width:171px;
+						}
+						#header-rightnow-link {
+							background-image:url(/sites/microsoft_global/images/rebrand/btn_at-microsoft.png);
+							width:171px;
+						}
+	#header-search {
+		float:right;
+		width:175px;
+		height:33px;
+	}
+		#header-keyword {
+			float:right;
+			height:23px;
+			margin:10px 0 0 0;
+		}
+			#header-keyword-field {
+				background:#FFF;
+				float:left;
+				width:130px;
+				height:17px;
+				line-height:17px;
+				padding:0 5px;
+				margin:0 2px 0 0;
+				border:1px solid #CCC;
+				font-size:10px;
+			}
+				#header-keyword ::-webkit-input-placeholder {
+					font-style:italic !important;
+					color:#999 !important;
+				}
+				#header-keyword input:-moz-placeholder {
+					font-style:italic !important;
+					color:#999 !important;
+				}
+				#header-keyword .defaultTextActive {
+					font-style:italic !important;
+					color:#999 !important;
+				}
+				#header-keyword-submit {
+					background:transparent url(/sites/microsoft_global/images/rebrand/btn_searchSmall.png) no-repeat 0 0;
+					float:left;
+					border:0 none;
+					width:19px;
+					height:19px;
+					cursor:pointer;
+				}
+					#header-keyword-submit:hover {
+						background-position:0 -19px;
+					}
+					
+	/* Breadcrumb */
+	#back-to-search {
+		display:none;
+	}
+	#breadCrumb {
+		float:left;
+		width:765px;
+		height:16px;
+		padding:0;
+		margin:15px 0 0 0;
+	}
+		#breadCrumb li {
+			height:16px;
+			line-height:16px;
+			float:left;
+			margin:0 5px 0 0;
+		}
+			#breadCrumb li a {
+				text-decoration:none;
+				height:inherit;
+				line-height:inherit;
+			}
+/* End Header */
+
+/* Start Components and Content Pages */
+
+	/* Content Headings */
+	h1.content-heading {
+		width:940px;
+		height:61px;
+		margin:0 auto 50px;
+		text-indent:-9999px;
+		font-size:0;
+		line-height:0;
+	}
+		h1#home-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_welcomeTitle.png) no-repeat left top;
+		}
+		h1#profession-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_searchProfession.png) no-repeat left center;
+		}
+		h1#location-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_searchLocation.png) no-repeat left center;
+		}
+		h1#division-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_searchBusiness.png) no-repeat left center;
+		}
+		h1#life-at-microsoft-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_lifeMS.png) no-repeat left center;
+		}
+		h1#interviewing-at-microsoft-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_interviewingMS.png) no-repeat left center;
+		}
+		
+	/* Keyword Search Bar */
+	#keyword-search {
+		width:940px;
+		height:51px;
+		margin:17px auto;
+	}
+		#keyword-field {
+			background:#FFF;
+			float:left;
+			width:842px;
+			height:49px;
+			line-height:49px;
+			padding:0 20px;
+			margin:0 5px 0 0;
+			border:1px solid #CCC;
+			font-size:20px;
+		}
+			#keyword-search ::-webkit-input-placeholder {
+				font-style:italic !important;
+				color:#666 !important;
+			}
+			#keyword-search input:-moz-placeholder {
+				font-style:italic !important;
+				color:#666 !important;
+			}
+			#keyword-search .defaultTextActive {
+				font-style:italic !important;
+				color:#666 !important;
+			}
+		#keyword-submit {
+			background:transparent url(/sites/microsoft_global/images/rebrand/btn_searchLarge.png) no-repeat 0 0;
+			float:left;
+			border:0 none;
+			width:51px;
+			height:51px;
+			cursor:pointer;
+		}
+			#keyword-submit:hover {
+				background-position:0 -51px;
+			}
+	
+	/* Search Pages */
+	.search-page-module {
+		background:transparent no-repeat left top;
+		width:621px;
+		height:302px;
+		float:left;
+		position:relative;
+	}
+		#profession-search-page-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_byProfession.png);
+		}
+		#location-search-page-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_byLocation.png);
+		}
+			#location-search-page-module  a#map-link-text {
+				position:absolute;
+				bottom:60px;
+				right:140px;
+				color:#fff;
+				font-size:14px;
+			}
+			#location-search-page-module  a#map-link {
+				display:block;
+				width:93px;
+				height:46px;
+				position:absolute;
+				bottom:43px;
+				right:39px;
+				text-indent:-9999px;
+				font-size:0;
+				line-height:0;
+			}
+		#division-search-page-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_byBusiness.png);
+		}
+			.search-page-form {
+				width:359px;
+				height:51px;
+				position:absolute;
+				top:125px;
+				left:200px;
+			}
+				.search-page-dropdown {
+					float:left;
+					background:#FFF;
+					width:300px;
+					border:1px solid #CBCBCB;
+					padding:1px;
+					cursor:pointer;
+				}
+					.search-page-primary-dropdown {
+						margin:0 0 8px 0;
+					}
+						.search-page-submit {
+							background:transparent url(/sites/microsoft_global/images/rebrand/btn_searchLarge.png) no-repeat 0 0;
+							float:right;
+							width:51px;
+							height:51px;
+							border:0 none;
+							cursor:pointer;
+						}
+							.search-page-submit:hover {
+								background-position:0 -51px;
+							}
+							input[disabled='disabled'].search-page-submit {
+								cursor:default;
+							}
+								input[disabled='disabled'].search-page-submit:hover {
+									background-position:0 0;
+								}
+	.search-page-image {
+		float:right;
+	}
+	
+	/* Home and Search Page Content Modules */
+	.content-module {
+		background:transparent no-repeat 0 0;
+		float:left;
+		width:302px;
+		height:151px;
+		margin:0 17px 0 0;
+		position:relative;
+	}
+		#life-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_hlLife.png);
+		}
+		#interview-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_hlInterview.png);
+		}
+		#join-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_hlTalent.png);
+			margin-right:0;
+		}
+		.content-module h2, .content-module p {
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+		}
+		.content-module-link {
+			display:block;
+			position:absolute;
+		}
+			#life-module-link, #interview-module-link {
+				width:68px;
+				height:13px;
+				bottom:18px;
+			}
+				#life-module-link {
+					left:18px;
+				}
+				#interview-module-link {
+					left:19px;
+				}
+			#join-module-link {
+				width:48px;
+				height:13px;
+				left:16px;
+				top:50px;
+			}
+				#life-module-link, #interview-module-link, #join-module-link {
+					text-indent:-9999px;
+					font-size:0;
+					line-height:0;
+				}
+				#life-module-link:hover, #interview-module-link:hover, #join-module-link:hover {
+					border-bottom:1px solid #00AEEF;
+				}
+			.icon-link {
+				width:28px;
+				height:28px;
+				bottom:16px;
+			}
+				.icon-link:hover {
+					opacity:.75;
+					-webkit-opacity:.75;
+					-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+					filter:"alpha(opacity=75)";
+				}
+					#join-link {
+						left:16px;
+					}
+					#linkedin-link {
+						left:55px;
+					}
+					#twitter-link {
+						left:93px;
+					}
+					#facebook-link {
+						left:131px;
+					}
+					
+	/* Content Pages */
+	.content-page-image {
+		float:left;
+	}
+	.content-page-text-image {
+		background:transparent no-repeat left top;
+		float:right;
+		text-indent:-9999px;
+		font-size:0;
+		line-height:0;
+		width:302px;
+		height:302px;
+	}
+		#life-page-text-image {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_passionUnites.png);
+		}
+		#interview-page-text-image {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_makeGood.png);
+		}
+	#content-page-modules {
+		margin:17px 0;
+	}
+	.content-page-module {
+		background:transparent no-repeat 0 0;
+		float:left;
+		width:302px;
+		height:151px;
+		margin:0 17px 0 0;
+		position:relative;
+	}
+	
+		/* Life @ Microsoft Page Content Modules */
+		#career-development-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/hl_careerDevelopment.png);
+		}
+		#diversity-inclusion-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/hl_diversityInclustion.png);
+		}
+		#global-benefits-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/hl_globalBenefits.png);
+			margin-right:0;
+		}
+		
+		/* Interviewing @ Microsoft Page Content Modules */
+		#apply-process-overview-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/hl_applyProcess.png);
+		}
+		#faq-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/hl_FAQ.png);
+		}
+		#resume-interview-tips-module {
+			background-image:url(/sites/microsoft_global/images/rebrand/hl_resumeInterviewTips.png);
+			margin-right:0;
+		}
+		
+		.content-page-module h2, .content-page-module p, .content-page-module a {
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+		}
+		.content-page-module-link {
+			display:block;
+			position:absolute;
+		}
+			.content-page-module-link:hover {
+				border-bottom:1px solid #00AEEF;
+			}
+		
+			/* Life @ Microsoft Page Content Module Links */
+			#career-development-module-link, #diversity-inclusion-module-link, #global-benefits-module-link {
+				width:74px;
+				height:13px;
+				bottom:16px;
+			}
+				#career-development-module-link {
+					left:18px;
+				}
+				#diversity-inclusion-module-link, #global-benefits-module-link {
+					left:19px;
+				}
+					
+			/* Interviewing @ Microsoft Page Content Module Links */
+			#apply-process-overview-module-link, #faq-module-link, #resume-interview-tips-module-link {
+				width:71px;
+				height:13px;
+				bottom:17px;
+			}
+				#apply-process-overview-module-link, #faq-module-link {
+					left:19px;
+				}
+				#resume-interview-tips-module-link {
+					left:18px;
+				}
+				
+		/* Sub-Content Page Formatting */
+		.sub-content-page {
+			padding:0px 0 0 0;
+		}
+			.sub-content-page h1 {
+				margin:0 0 14px 0;
+			}
+			.sub-content-page h2 {
+				margin:0 0 24px 0;
+			}
+			.sub-content-page p {
+				margin:0 0 30px 0;
+			}
+				.sub-content-page p.heading {
+					margin:0;
+					font-weight:bold;
+				}
+				.sub-content-page p.last {
+					margin:0 0 42px 0;
+				}
+				
+			/* Sub-Content Page Headers */
+			.sub-content-page-heading {
+				background:transparent no-repeat left top;
+				text-indent:-9999px;
+				font-size:0;
+				line-height:0;
+			}
+				h1.sub-content-page-heading {
+					height:43px;
+				}
+				h2.sub-content-page-heading {
+					height:26px;
+				}
+				
+					/* Career Development Page */
+					h1#career-development-heading {
+						background-image:url(/sites/microsoft_global/images/rebrand/graphic_CareerDevelopment.png);
+					}
+						h2#philosophy-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_OurPhilosophy.png);
+						}
+						h2#career-model-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_OurCareerModel.png);
+						}
+						h2#mentoring-networking-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_Mentoring&Networking.png);
+						}
+						
+					/* Diversity and Inclusion Page */
+					h1#diversity-inclusion-heading {
+						background-image:url(/sites/microsoft_global/images/rebrand/graphic_DiversityInclusion.png);
+					}
+						h2#executive-commitment-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_executiveCommitment.png);
+						}
+						h2#vision-strategy-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_visionStrategy.png);
+						}
+						h2#program-initiatives-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_programInitiatives.png);
+						}
+						
+					/* Global Benefits Page */
+					h1#global-benefits-heading {
+						background-image:url(/sites/microsoft_global/images/rebrand/graphic_globalBenefits.png);
+					}
+						h2#health-wellness-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_healthWellness.png);
+						}
+						h2#family-parenting-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_familyParenting.png);
+						}
+						h2#investing-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_investing.png);
+						}
+						h2#giving-together-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_givingTogether.png);
+						}
+						h2#learning-development-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_learningDevelopment.png);
+						}
+				
+					/* Apply Process & Overview Page */
+					h1#apply-process-heading {
+						background-image:url(/sites/microsoft_global/images/rebrand/graphic_applyProcess.png);
+						height:80px;
+					}
+						h2#submitting-application-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_submitApplication.png);
+						}
+						
+					/* FAQ Page */
+					h1#faq-heading {
+						background-image:url(/sites/microsoft_global/images/rebrand/graphic_FAQ.png);
+						height:40px;
+					}
+					
+					/* Resume & Interview Tips Page */
+					h1#resume-interview-heading {
+						background-image:url(/sites/microsoft_global/images/rebrand/graphic_resumeInterviewTips.png);
+						height:44px;
+					}
+						h2#resume-tips-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_resumeTips.png);
+						}
+						h2#interview-tips-heading {
+							background-image:url(/sites/microsoft_global/images/rebrand/graphic_interviewTips.png);
+						}
+						
+			/* Sub-Content Page Image Container */
+			.sub-content-page-image-container {
+				float:right;
+				clear:none;
+				margin:0 0 30px 30px;
+				width:467px;
+			}
+				.sub-content-page-image {
+					float:right;
+				}
+				.sub-content-image-link {
+					float:right;
+					display:block;
+					text-indent:-9999px;
+					font-size:0;
+					line-height:0;
+					background:transparent no-repeat left top;
+					margin-top:17px;
+				}
+					#life-life-sub-content-image-link, #interviewing-life-sub-content-image-link {
+						width:189px;
+						height:123px;
+					}
+					#life-interviewing-sub-content-image-link, #interviewing-interviewing-sub-content-image-link {
+						width:261px;
+						height:95px;
+						margin-right:17px;
+					}
+					
+					/* Life @ Microsoft Sub-Content Page Image Container */
+					#life-life-sub-content-image-link {
+						background-image:url(/sites/microsoft_global/images/rebrand/hl_life_life.png);
+					}
+					#life-interviewing-sub-content-image-link {
+						background-image:url(/sites/microsoft_global/images/rebrand/hl_life_interview.png);
+					}
+					
+					/* Interviewing @ Microsoft Sub-Content Page Image Container */
+					#interviewing-life-sub-content-image-link {
+						background-image:url(/sites/microsoft_global/images/rebrand/hl_interview_life.png);
+					}
+					#interviewing-interviewing-sub-content-image-link {
+						background-image:url(/sites/microsoft_global/images/rebrand/hl_interview_interview.png);
+					}
+	
+	/* Join Page */
+		
+		/* Framework Overwrites */
+		.join-searchbar, .join-social {
+			display:none;
+		}
+		.join-header, .join-header-content {
+			background:transparent url() !important;
+			border:0 none !important;
+			margin:0 auto !important;
+			padding:0 !important;
+			width:100%;
+		}
+		
+	#join-page {
+		padding:30px 0 0 0;
+	}
+		#join-page h1 {
+			margin:0 0 30px 0;
+		}
+		#join-page h2 {
+			margin:0 0 30px 0;
+		}
+		#join-page p {
+			margin:0 0 30px 0;
+		}
+			#join-page p.heading {
+				margin:0;
+				font-weight:bold;
+			}
+			#join-page p.last {
+				margin:0 0 50px 0;
+			}
+			
+		#join-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_joinTalentNetwork.png) no-repeat left top;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+			width:100%;
+			height:75px;
+			margin:0 0 30px 0;
+		}
+		#join-image-container {
+			float:right;
+			margin:0 0 30px 30px;
+		}
+			#join-graphic {
+				float:right;
+			}
+			.join-image-link {
+				float:right;
+				display:block;
+				text-indent:-9999px;
+				font-size:0;
+				line-height:0;
+				background:transparent no-repeat left top;
+				margin-top:17px;
+			}
+				#join-life-image-link {
+					background:transparent url(/sites/microsoft_global/images/rebrand/hl_join_life.png) no-repeat left top;
+					width:189px;
+					height:123px;
+				}
+				#join-interviewing-image-link {
+					background:transparent url(/sites/microsoft_global/images/rebrand/hl_join_interview.png) no-repeat left top;
+					width:261px;
+					height:95px;
+					margin-right:17px;
+				}
+		#join-form {
+			
+		}
+			#join-form label {
+				display:none;
+			}
+			#join-email {
+				background:#fff;
+				border:1px solid #666;
+				width:305px;
+				height:44px;
+				line-height:44px;
+				padding:0 10px;
+				float:left;
+				margin:0 5px 0 0;
+				font-size:20px;
+			}
+				#join-form ::-webkit-input-placeholder {
+					font-style:italic !important;
+					color:#666 !important;
+				}
+				#join-form input:-moz-placeholder {
+					font-style:italic !important;
+					color:#666 !important;
+				}
+				#join-form .defaultTextActive {
+					font-style:italic !important;
+					color:#666 !important;
+				}
+			#join-submit {
+				background:transparent url(/sites/microsoft_global/images/rebrand/btn_joinNow.png) no-repeat 0 0;
+				float:left;
+				border:0 none;
+				width:130px;
+				height:46px;
+				cursor:pointer;
+			}
+				#join-submit:hover {
+					background-position:0 -46px;
+				}
+			#join-form span.error {
+				font-size:13px;
+				font-weight:bold;
+				font-style:italic;
+				color:#666;
+				display:block;
+				float:left;
+				height:46px;
+				line-height:46px;
+				margin:0 0 0 20px;
+			}
+				
+		#join-page hr {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center center;
+			width:940px;
+			height:1px;
+			border:0 none;
+			margin:70px 0 60px 0;
+		}
+		
+		#connect-heading {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_connectUs.png) no-repeat left top;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+			width:100%;
+			height:35px;
+			margin:0 0 30px 0;
+		}
+		.connect-module {
+			background:transparent no-repeat left top;
+			float:left;
+			padding:46px 0 0 0;
+			margin:0 60px 0 0;
+		}
+			#blog-module {
+				background-image:url(/sites/microsoft_global/images/rebrand/graphic_jobsBlog.png);
+				width:179px;
+			}
+			#linkedin-module {
+				background-image:url(/sites/microsoft_global/images/rebrand/graphic_linkedIn.png);
+				width:179px;
+			}
+			#facebook-module {
+				background-image:url(/sites/microsoft_global/images/rebrand/graphic_facebook.png);
+				width:225px;
+			}
+			#twitter-module {
+				background-image:url(/sites/microsoft_global/images/rebrand/graphic_twitter.png);
+				width:177px;
+				margin-right:0;
+			}
+			.connect-module p {
+				text-indent:-9999px;
+				font-size:0;
+				line-height:0;
+				margin:0 !important;
+			}
+			.connect-module ul {
+				padding:0;
+				margin:20px 0 0 0;
+			}
+				.connect-module ul li {
+					margin:0 0 10px 0;
+				}
+					.connect-module ul li a {
+						font-size:13px;
+					}
+		
+/* End Components and Content Pages */
+
+/* Start Talent Landing and Strategy Pages */
+#category-header {
+	background:transparent none;
+	margin:0;
+	padding:0;
+}
+	#category-header p {
+		padding:0 0 30px 0;
+	}
+	
+	/* TLP Headings */
+	.tlp-heading-container {
+		float:left;
+		width:450px;
+	}
+		h1.tlp-heading, h2.tlp-subheading, a.tlp-heading-image {
+			margin:0 0 30px 0;
+			display:block;
+		}
+		.tlp-dropdown {
+			background:#fff;
+			border:1px solid #ccc;
+			height:24px;
+			padding:1px;
+			cursor:pointer;
+			margin:0 0 25px 0;
+			width: 400px;
+		}
+	
+	/* TLP Image Container */
+	.tlp-image-container {
+		float:right;
+	}
+		.tlp-image {
+			float:right;
+		}
+		.tlp-image-link {
+			float:right;
+			display:block;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+			background:transparent no-repeat left top;
+			margin-top:17px;
+		}
+			.tlp-life-image-link {
+				width:189px;
+				height:123px;
+			}
+			.tlp-interviewing-image-link {
+				width:261px;
+				height:95px;
+				margin-right:17px;
+			}
+			
+			/* Windows Embededded Landing Page */
+			#winEmbedLogoContainer {
+				width:430px;
+				height:220px;
+				float:right;
+			}
+				#winEmbedLogo {
+					margin:90px auto;
+				}
+			.winEmbedVidLink {
+				float:right;
+				margin:17px 17px 0 0;
+			}
+			.winEmbedLast {
+				margin-right:0;
+			}
+				.winEmbedVid {
+					
+				}
+			
+			/* Profession TLP Image Links */
+			#profession-tlp-life-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/profession-tlp/hl_prof_life.png);
+			}
+			#profession-tlp-interviewing-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/profession-tlp/hl_prof_interview.png);
+			}
+			
+			/* Location TLP Image Links */
+			#location-tlp-life-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/location-tlp/hl_loc_life.png);
+			}
+			#location-tlp-interviewing-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/location-tlp/hl_loc_interview.png);
+			}
+			
+			/* Business Division TLP Image Links */
+			#division-tlp-life-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/division-tlp/hl_bd_life.png);
+			}
+			#division-tlp-interviewing-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/division-tlp/hl_bd_interview.png);
+			}
+			#israel-students-tlp-life-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/division-tlp/sp-israel-career-paths-button.png);
+			}
+			#israel-stdents-tlp-interviewing-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/division-tlp/sp-israel-interview-button.png);
+			}
+	
+	/* #search-wrapper is relocated to where #search-wrapper-clone was */
+	#search-wrapper-clone {
+		display:none;
+	}
+	
+	/* Search Results Image Container */
+	#search-results-image-container {
+		float:right;
+		margin:0 0 17px 0;
+	}
+		.search-results-image-link {
+			float:right;
+			display:block;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+			background:transparent no-repeat left top;
+		}
+			#search-results-life-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/hl_search_life.png);
+				width:189px;
+				height:123px;
+			}
+			#search-results-interviewing-image-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/hl_search_interview.png);
+				width:261px;
+				height:95px;
+				margin-right:17px;
+			}
+	.topjobs-header {
+		float:left;
+		width:450px;
+	}
+		.topjobs-header .breadcrumbtrail {
+			display:none;
+		}
+		.topjobs-header .keyword-title {
+			font-size:22px;
+		}
+			.topjobs-header .keyword-title #searchQuery {
+				font-size:35px;
+				display:block;
+			}
+			
+/* No Jobs/Results */
+#noresults {
+	background:#F7F7F7 url(/sites/microsoft_global/images/rebrand/tlp/attention.png) no-repeat left top;
+	border:0 none;
+	width:810px;
+	height:87px;
+	padding:10px 10px 10px 120px;
+	margin:20px 0;
+}
+	#attention {
+		font-size:18px;
+		font-weight:normal;
+		border:0 none;
+		margin:5px 0;
+		padding:0;
+	}
+		#attention-img {
+			display:none;
+		}
+	#noresults-message {
+		padding:0;
+		margin:0;
+		font-size:12px;
+		font-weight:normal;
+	}
+		#noresults-message h4 {
+			font-size:12px;
+			font-weight:normal;
+			margin:0;
+			padding:0;
+		}
+	
+/* Category Groups Wrapper */
+.category-groups-wrapper {
+	background:#F7F7F7;
+	border:0 none;
+}
+	.category-groups-wrapper a {
+		
+	}
+
+/* LinkedIn Button */
+#linkedin-wrapper {
+	margin:0 0 20px 0 !important;
+}
+	#linkedinbutton {
+		height:31px;
+		top:10px !important;
+	}
+
+#search-wrapper {
+	background:#F7F7F7;
+	width:910px;
+	height:105px;
+	padding:15px;
+}
+	/* Search and Subscribe Forms and RSS div */
+	#keywordsearch, #keywordsearch-clone {
+		background:transparent none;
+		border:0 none;
+		padding:15px 0 0 0;
+		margin:0;
+	}
+	#emailsubscribe, #emailsubscribe-clone {
+		background:transparent none;
+		border:0 none;
+		padding:0;
+		margin:0;
+	}
+	#savesearch-wrapper #emailsubscribe, #savesearch-wrapper-clone #emailsubscribe-clone {
+		margin:0;
+		padding:5px 0 0 0;
+	}
+	#noresults-subscribe {
+		padding:0;
+		margin:0;
+	}
+		#noresults-subscribe #emailsubscribe {
+			background:transparent none;
+			border:0 none;
+			padding:2px 0 0 0;
+			margin:0;
+		}
+	#rss-wrapper, #rss-wrapper-clone {
+		background:transparent none;
+		border:0 none;
+		padding:15px 0 0 0;
+		margin:0;
+	}
+	#savesearch-wrapper {
+		margin:0;
+		padding:0;
+	}
+		#savesearch, #savesearch-clone {
+			padding:5px 0 0 0;
+			margin:0;
+		}
+			#savesearch-link {
+				background-image:url(/sites/microsoft_global/images/rebrand/tlp/icon-email.png);
+			}
+	
+	/* Search, Subscribe and RSS Labels */
+	#keywordsearch-label, #keywordsearch-label-clone {
+		background:transparent none;
+		border:0 none;
+		left:0;
+		top:0;
+		padding:0;
+		font-size:12px;
+		color:#333;
+		font-weight:bold;
+	}
+		#keywordsearch-label-text, #keywordsearch-label-text-clone {
+			font-size:inherit;
+			font-weight:inherit;
+			color:inherit;
+		}
+	#emailsubscribe-label, #emailsubscribe-label-clone {
+		display:none;
+	}
+	#noresults-subscribe-label {
+		background:transparent none;
+		border:0 none;
+		left:0;
+		top:0;
+		padding:0;
+		font-size:12px;
+		color:#333;
+		font-weight:bold;
+	}
+	#rss-label, #rss-label-clone {
+		background:transparent none;
+		border:0 none;
+		left:0;
+		top:0;
+		padding:0;
+		font-size:12px;
+		color:#333;
+		font-weight:bold;
+	}
+	
+	/* Search and Subscribe Fields and Buttons */	
+	#keywordsearch-q, #keywordsearch-q-clone, #emailsubscribe-email, #emailsubscribe-email-clone {
+		background:#FFF;
+		width:230px;
+		padding:0 10px !important;
+		height:25px;
+		line-height:25px;
+		border:1px solid #CCC;
+		float:left;
+		margin:0 5px 0 0;
+	}
+	#keywordsearch-button, #keywordsearch-button-clone {
+		background:transparent url(/sites/microsoft_global/images/rebrand/graphic_searchJobs.png) no-repeat 0 0;
+		height:27px;
+		width:85px;
+		padding:0;
+		margin:0;
+		cursor:pointer;
+		float:left;
+		border:0 none;
+		text-indent:-9999px;
+		font-size:0;
+		line-height:0;
+	}
+	#emailsubscribe-button, #emailsubscribe-button-clone {
+		background:transparent url(/sites/microsoft_global/images/rebrand/graphic_subscribe.png) no-repeat 0 0;
+		height:27px;
+		width:85px;
+		padding:0;
+		margin:0;
+		cursor:pointer;
+		float:left;
+		border:0 none;
+		text-indent:-9999px;
+		font-size:0;
+		line-height:0;
+	}
+		#keywordsearch-button:hover, #keywordsearch-button-clone:hover, #emailsubscribe-button:hover, #emailsubscribe-button-clone:hover {
+			border:0 none; /* Required selector carry-over */
+			background-position:0 -27px;
+		}
+	
+/* Job Table */
+.paginationShell {
+	background:0 none;
+	border:0 none;
+}
+	.paginationShell a {
+		
+	}
+.searchResultsShell {
+	border:1px solid #666;
+}
+	.searchResults td {
+		border-color:#CCFFFF;
+	}
+	.searchResults th {
+		background:#F5F5F5 url();
+		border-color:#666;
+	}
+	#search-results-filter {
+		background:#F7F7F7 url();
+	}
+	.dbOutputRow2 {
+		background:#FFF url();
+		height:20px;
+		line-height:20px;
+	}
+	.dbOutputRow1 {
+		background:#FFF url();
+		height:20px;
+		line-height:20px;
+	}
+/* End Talent Landing and Strategy Pages */
+				
+/* Start Job Pages */
+.applylink {
+	margin:0;
+}
+	a.apply {
+		background:transparent url(/sites/microsoft_global/images/rebrand/btn_applyNow.png) no-repeat 0 0;
+		width:196px;
+		height:55px;
+		line-height:0;
+		cursor:pointer;
+		padding:0 !important;
+		border:0 none;
+		font-size:0;
+		text-indent:-9999px;
+		margin:40px 0;
+	}
+		a.apply:hover {
+			border:0 none; /* Required selector carry-over */
+			background-position:0 -55px;
+		}
+	.jobTitle a.apply {
+		margin:0;
+	}
+.jobDisplayShell {
+	background:transparent none;
+	border:0 none;
+	padding:0;
+	width:940px;
+	float:none;
+}
+	.jobDisplay {
+		padding:0;
+	}
+		#job-title, .jobTitle h1 {
+			font-size:30px;
+			color:#333;
+			width:725px;
+		}
+#similar-jobs {
+	background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center top;
+	width:940px;
+	margin:40px 0;
+	padding:40px 0 0 0;
+}
+/* End Job Pages */
+	
+/* Start Map/Location Page */
+#map-heading {
+	background:transparent url(/sites/microsoft_global/images/rebrand/graphic_interactiveMap.png) no-repeat left top;
+	width:675px;
+	height:43px;
+	text-indent:-9999px;
+	font-size:0;
+	line-height:0;
+	margin:0 0 17px 0;
+}
+#map-container {
+	margin:0 0 17px 0;
+}
+/* End Map/Location Page */
+
+/* Start Talent Community Pages */
+
+/* Framework Overwrite */
+#talentCommunityWrapper {
+	padding:0 !important;
+	font-size:13px !important;
+}
+	#talentCommunityWrapper p {
+		margin:0 0 30px 0;
+	}
+		#talentCommunityWrapper p.last {
+			margin-bottom:0;
+		}
+	
+	/* Business Card Heading */
+	.talent-community-heading {
+		background:transparent no-repeat left top;
+		text-indent:-9999px;
+		font-size:0;
+		line-height:0;
+		width:100%;
+		margin:0 0 30px 0;
+	}
+		/* Subscribe Business Card */		
+		#subscribe-heading {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_joiningNetwork.png);
+			height:76px;
+		}
+		/* Apply Business Card */
+		#apply-heading {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_showingInterest.png);
+			height:86px;
+		}
+		/* Thank You Page */
+		#thanks-heading {
+			background-image:url(/sites/microsoft_global/images/rebrand/graphic_thankyou.png);
+			height:35px;
+		}
+	
+		#tcContent table.formSection {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center bottom !important;
+			width:940px;
+			height:34px;
+			border:0 none !important;
+			padding:0 0 10px 0 !important;
+		}
+			#tcContent td.sectionName h1 {
+				background:transparent url(/sites/microsoft_global/images/rebrand/graphic_profileInfo.png) no-repeat left top;
+				text-indent:-9999px;
+				font-size:0;
+				line-height:0;
+				height:20px;
+				width:187px;
+				padding:0;
+			}
+			#tcContent table.formSection td.addlText {
+				padding-top:7px !important;
+			}
+				#tcContent table.formSection td.addlText strong {
+					font-weight:normal;
+				}
+		.userinfoItem p, .userinfoItem p a {
+			font-size:10px;
+		}
+		.userinfoLabel span, #requiredField strong {
+			color:#0099FF;
+		}
+		*+html #tcsignup {
+			margin:0 0 10px 0;
+		}
+		#tcContent #agentsWrapper table.formSection {
+			background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center bottom !important;
+			width:940px;
+			height:34px;
+			border:0 none !important;
+			margin:10px 0 !important;
+		}
+			#tcContent #agentsWrapper td.sectionName h1 {
+				background:transparent url(/sites/microsoft_global/images/rebrand/graphic_jobAgents.png) no-repeat left top;
+				text-indent:-9999px;
+				font-size:0;
+				line-height:0;
+				height:24px;
+				width:149px;
+				padding:0;
+			}
+
+		#job-agent-form {
+			background:#f2f2f2 !important;
+			padding:10px !important;
+		}
+		
+		/* Talent Community Buttons */
+		#btnTCAdd, #btnTCUpdate, #btnTCCancel, #btnTCPreview, #btnTCDelete, #btnNextStep, #btnThanksDone {
+			background:transparent no-repeat 0 0;
+			border:0 none;
+			text-indent:-9999px;
+			font-size:0;
+			line-height:0;
+			border-radius:0;
+			padding:0;
+		}
+		#btnTCAdd, #btnTCUpdate, #btnTCCancel, #btnTCPreview {
+			display:block;
+			float:left;
+			margin:0 5px 0 0;
+		}
+			#btnTCAdd {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_add.png);
+				width:78px;
+				height:32px;
+			}
+				#btnTCAdd:hover {
+					background-position:0 -32px;
+				}
+			#btnTCUpdate {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_update.png);
+				width:78px;
+				height:32px;
+			}
+				#btnTCUpdate:hover {
+					background-position:0 -32px;
+				}
+			#btnTCCancel {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_cancel.png);
+				width:78px;
+				height:32px;
+			}
+				#btnTCCancel:hover {
+					background-position:0 -32px;
+				}
+			#btnTCPreview {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_preview.png);
+				width:78px;
+				height:32px;
+			}
+				#btnTCPreview:hover {
+					background-position:0 -32px;
+				}
+			#btnTCDelete {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_deleteSelected.png);
+				width:140px;
+				height:32px;
+			}
+				#btnTCDelete:hover {
+					background-position:0 -32px;
+				}
+			#btnNextStep {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_next.png);
+				width:78px;
+				height:32px;
+			}
+				#btnNextStep:hover {
+					background-position:0 -32px;
+				}
+			#btnThanksDone {
+				background-image:url(/sites/microsoft_global/images/rebrand/btn_done_ty.png);
+				width:102px;
+				height:39px;
+				padding:0 !important;
+				display:block;
+			}
+				#btnThanksDone:hover {
+					background-position:0 -39px;
+				}
+/* End Talent Community Pages */
+
+/* Start View All & Top Job Search Pages */
+.breadcrumbtrail, .search .legend {
+	display:none;
+}
+#topjobs-heading {
+	background:transparent url(/sites/microsoft_global/images/rebrand/graphic_topjobsearches.png) no-repeat top left;
+	width:334px;
+	height:45px;
+}
+#viewalljobs-heading {
+	background:transparent url(/sites/microsoft_global/images/rebrand/graphic_searchcategory.png) no-repeat top left;
+	width:372px;
+	height:45px;
+	margin:0 0 20px 0;
+}
+.pagination {
+	padding:0;
+}
+#searchbycat {
+	background:transparent none;
+	border:0 none;
+	float:none;
+}
+	#searchbycat ul, #searchbycat li {
+		padding:0;
+		margin:0;
+	}
+.dotted-border {
+	background:transparent url(/sites/microsoft_global/images/rebrand/graphic_horzDots.png) no-repeat center bottom;
+	width:940px;
+	height:1px;
+	margin:0 auto;
+}
+/* Start View All & Top Job Search Pages */
+
+/* Start SEO Pages */
+.tlp-stage {
+	margin:0 auto;
+	float:none;
+	width:918px;
+}
+	.tlp-stage .tlp-image {
+		float:none;
+		margin:10px 0 0 0;
+	}
+	.tlp-stage .tlp-text #category-header h1, .tlp-stage .tlp-text #category-name {
+		float:none;
+		margin:10px 0;
+	}
+/* */
+	/* Start Recruiter Layout */
+	.recruiter h1 {
+		font-size:155%;
+		margin:10px 0 0 0;
+		display:none;
+	}
+	.recruiter h2 {
+		display:none;
+	}
+	.recruiter p {
+		padding:0 !important;
+		margin:0;
+	}
+	.recruiter .panel {
+		width:938px;
+		height:310px;
+		border:1px solid #cbcbcb;
+		margin:0 auto;
+	}
+	.recruiter .panel .column-left, .recruiter .panel .column-mid, .recruiter .panel .column-right {
+		width:312px;
+		height:311px;
+		float:left;
+	}
+	.recruiter .panel .column-left, .recruiter .panel .column-mid {
+		border-right:1px solid #e5e5e5;
+	}
+	.recruiter-heading {
+		background:#fff url(/sites/microsoft_global/images/tlp-heading.gif) top left repeat-x;
+		border:1px solid #fff;
+		padding:5px 15px;
+	}
+	.recruiter-content {
+		background:#fff url(/sites/microsoft_global/images/tlp-content.gif) top left repeat-x;
+		border-top:1px solid #e5e5e5;
+		border-left:1px solid #fff;
+		border-right:1px solid #fff;
+		border-bottom:1px solid #fff;
+		padding:14px;
+		height:253px;
+	}
+	.recruiter-content a img{
+		border:0;
+	}
+	.recruiter .panel .portrait {
+		width:198px;
+		padding:15px;
+		text-align:center;
+		border:2px solid #e0e0e0;
+		background-color:#000;
+		margin-bottom:15px;
+	}
+	.recruiter .panel .column-left img {
+		border:1px solid #e0e0e0;
+		overflow:hidden;
+		display:block;
+	}
+	.recruiter .panel .column-mid ul {
+		margin:0 0 0 15px;
+		padding:0;
+		list-style-type:square;
+	}
+	/* End Recruiter Layout */
+	.tlp-image-learn-more-amy {
+	    background:url(/sites/microsoft_global/images/sp-ireland-dev-centre-img.jpg) no-repeat scroll 0 0 transparent;
+	    height:347px;
+	    position:relative;
+	    width:916px;
+	}
+	.tlp-image-learn-more-sara {
+	    background:url(/sites/microsoft_global/images/sp-ireland-smsg-img.jpg) no-repeat scroll 0 0 transparent;
+	    height:347px;
+	    position:relative;
+	    width:916px;
+	}
+	.tlp-image-learn-more-art {
+	    background:url(/sites/microsoft_global/images/sp-ireland-emea-ops-img.jpg) no-repeat scroll 0 0 transparent;
+	    height:347px;
+	    position:relative;
+	    width:916px;
+	}
+		#tlp-learn-more {
+		    background: url(/sites/microsoft_global/images/gptw-learn-more-sp-sprite.png) no-repeat scroll 0 0 transparent;
+		    display:block;
+		    height:40px;
+		    position:absolute;
+		    right:0;
+		    top:307px;
+		    width:167px;
+		}
+	.diversity-content {
+	    background:url(/sites/microsoft_global/images/curtain_bg_tlp.gif) no-repeat scroll left 15px transparent;
+	    height:369px;
+	    width:792px;
+	    margin:0 auto;
+	}
+		.style-four-column-left {
+		    color:#FFFFFF;
+		    float:left;
+		    height:369px;
+		    width:520px;
+		}
+			.style-four-column-left .content {
+			    padding: 85px 10px 0;
+			    height:369px;
+		    	width:520px;
+			}
+	.incubation-jobs {
+		width:918px;
+		margin:0 auto;
+	}
+		.incubation-jobs #category-name {
+			float:none;
+		}
+		.incubation-jobs p {
+			margin:7px 0 6px;
+		}
+		.incubation-jobs ul li {
+			list-style-type:disc;
+			margin-left:25px;
+			line-height:22px;
+		}
+/* End SEO Pages */
+
+/* Start Footer */
+.footer, #footer {
+	background:transparent none;
+	border:0 none;
+	float:none;
+	margin:20px auto;
+	width:940px;
+	padding:0;
+	font-size:10px;
+	position:relative;
+}
+	.footer a, #footer a, .footer p, #footer p, .footer li, #footer li, .footer span, #footer span {
+		font-size:10px;
+		border:0 none;
+	}
+		.footer a, #footer a {
+			text-decoration:none;
+		}
+			.footer a:hover, #footer a:hover {
+				text-decoration:underline;
+			}
+	#footerlinks, .footer-links {
+		float:left;
+		height:10px;
+		padding:9px 0 0 0;
+		margin:0 0 20px 0;
+	}
+		#footerlinks .first, .footer-links .first {
+			padding-left:0;
+		}
+		#footerlinks .last, .footer-links .last {
+			padding-right:0;
+		}
+		#footerlinks a, .footer-links a, #footerlinks span, .footer-links span {
+			color:#00AEEF;
+			padding:0 8px;
+		}
+			.poweredbyj2w {
+				margin:0 20px 0 0;
+			}
+				.poweredbyj2w a {
+					padding:0 !important;
+				}
+	#footer-logo {
+		float:right;
+		width:110px;
+	}
+	#copyright {
+		float:right;
+	}
+/* End Footer */
+
+/* End Rebrand */
+
+/* !!!Start Required for microsites!!! */
+#wrapper {
+	width: 950px;
+	margin: 0 auto;
+}
+/********** Section 508 Compliance ********/
+#skip {
+	height:0;
+	left:-1000px;
+	position:absolute;
+	width:0;
+	z-index:1;
+	}
+/* !!!Stop Required for microsites!!! */
+
+
+
+.remove-text-indent {
+	text-indent:0px !important;
+}
+.remove-height {
+	height:auto;
+}
+
+
+#tlp-container-corp-retail {
+    background: none repeat scroll 0 0 #F25022;
+    color: #FFFFFF;
+    height: 244px;
+    padding: 20px;
+}
+#category-header #tlp-container-corp-retail h1, #tlp-container-corp-retail #category-name {
+    clear: none;
+    color: #FFFFFF;
+    display: block;
+    float: none;
+    font-size: 29px;
+    margin: 0 0 25px;
+}
+#tlp-container-corp-retail  img {
+    clear: none;
+    display: block;
+    float: right;
+    padding: 0 0 0 20px;
+}        

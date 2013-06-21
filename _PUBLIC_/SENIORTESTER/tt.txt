@@ -1,0 +1,77 @@
+
+proceso de testeo
+
+P & C
+
+- test plan
+  - test items, features tested, features not tested, exit criteria, suspension criteria,
+    deliverables, tesing tasks, environmenal needs, responsabilities, training needs, 
+    schedule, risks and contingencies, approvals  (estrategias).
+    ver http://www.stellman-greene.com/aspm/content/view/39/41/
+
+- master test plan, level test plan
+
+
+- recursos necesarios: personas, tiempo, utilidades?
+
+- test management: mantener el test process, infraestructuras de test, testware
+
+- risks -> test strategy
+
+- control respeto al plan. 
+
+- feeback: pesronas, herramientas
+
+- el test plan se modifica continuamente, segun el feedback del control.
+
+- exit / completion criteria
+   - test coverage of source code
+   - customer fullfillment
+
+- test priorities
+
+- test intensity
+
+
+IEEE 829  Standard for Software and System Test Documentation
+ - son 8 docs
+ - el test plan 
+
+
+The IEEE documents that suggest what should be contained in a test plan are:
+829-2008 IEEE Standard for Software and System Test Documentation[1]
+1008-1987 IEEE Standard for Software Unit Testing[4]
+1012-2004 IEEE Standard for Software Verification and Validation[5]
+1059-1993 IEEE Guide for Software Verification & Validation Plans (withdrawn)[8]
+
+
+A & D
+
+
+- test basis  (reqs, api, arch)
+
+- test design: test condition + test case + test procedure
+
+- test sepcification = test design = test design specification
+
+- test conditions : caracteristica del test object que puede ser testeada
+(test cond. para el apellido: 20 caract en mayusculas)
+
+- test cases (logicos, fisicos)
+   - input + expected result
+   - verifica el test condition.
+
+- test data
+
+- expected outcomes
+
+- test environment
+
+- prioridades
+
+- test item = software item = test object = elemento a testeo
+
+
+- test procedure = test script  = manual test script = es el texto q describe el test.
+
+

@@ -1,0 +1,1 @@
+try{var pageTracker;if(typeof(_gat)!=="undefined"){pageTracker=_gat._getTracker("UA-xxxxxx-x");pageTracker._setDomainName(".infojobs.net");pageTracker._trackPageview()}}catch(err){};

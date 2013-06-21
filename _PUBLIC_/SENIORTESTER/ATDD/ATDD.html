@@ -1,0 +1,861 @@
+﻿		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional //EN">
+		<HTML>
+		<HEAD>
+			<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+			<TITLE></TITLE>
+
+			<style type="text/css">
+
+			body {
+			/*background-color:#F89827; */
+			}
+
+			#contacte table td{
+				font-size:small;
+				font-style:bold
+
+			}
+
+			#navmenu {
+				background-color:black;
+				color:white;
+				font-size:small
+			}
+
+			#navmenu ul li {
+			  display:inline;
+			  }
+
+			#navmenu ul li a:visited{
+				color:white;
+			  }
+
+			#idiomes ul li {
+			  display:inline;
+			  }
+			.portalstable {
+			  width:100%;
+			  border-collapse:collapse
+			}
+
+			.menuportales {
+			   background-color:#d3f9bc;
+	  		   text-align:top;
+			   height:3000px;
+			}
+
+			iframe {
+				   height:3000px;
+				   border:5px solid #dcdcdc;
+				   background-color:white;
+				   /*background-image: url("loading.gif");
+				   background-repeat:no-repeat;
+				   background-position:50% 5%;*/
+			}
+
+
+			ul {
+			   list-style:none; /* Eliminamos los bullets */
+			   padding-left:10px;
+			}
+
+			li {
+			   margin-top:10;
+			   padding: 4px
+			}
+
+			a {
+			text-decoration:none;
+			color:black;
+			}
+
+			li:hover {
+			 background-color:#F89827;
+			}
+
+			a:visited {
+			color:black
+			}
+
+			.tachado {
+			text-decoration:line-through
+			}
+
+
+			.dataActualitzada {
+			font-size:11px;
+			font-style:italic
+			}
+
+			.dataNovetat {
+			font-size:small;
+			font-style:bold
+			}
+
+			.activeElem{
+			/*background-color:#F89827*/
+			}
+
+			.desactiveElem{
+			background-color:none
+			}
+
+			.categoria1Portal {
+			cursor:pointer;
+/*			color:#FFFFFF;*/
+			font-family:arial;
+			font-weight:bold;
+			text-decoration: underline;
+			font-size:80%;
+/*			background:#0099CC; */
+			padding:5px
+			}
+
+			.categoria2Portal {
+			font-family:arial;
+			font-size:small;
+			/*background:#F89827;*/
+			padding:5px;
+			text-align:right
+			}
+
+			.icono {
+				weight:30px;
+				width: 45px;
+			}
+
+			#novetats {
+			/*background-color:white;*/
+			height:170px;
+			overflow:auto;
+			}
+
+		    .properament {
+			   list-style:square;
+			   padding-left:10px;
+			}
+
+		    #properament ul li {
+			   font-size:small;
+			}
+
+            .check {
+              position:absolute;
+              right:0px;
+            }
+
+			img
+			{
+			  border:0;
+			}
+			
+			.followIcon {
+				weight:15px;
+				width: 15px;
+			}
+
+			.ambitEnllac {
+				weight:10px;
+				width: 10px;
+			}
+			
+			.profesion_div{
+				margin:10px;
+				font-size:small; 
+				line-height:150%; 
+		/*		background-color:#ffcc99 */
+			}
+			
+			.profession_text{
+				background-color:#dcdcdc;
+			}
+			
+			</style>
+
+
+		</HEAD>
+		<BODY LANG="es-ES" DIR="LTR">
+
+
+		<script language="JavaScript">
+			function ShowHide(divId) {
+				if(document.getElementById(divId).style.display == 'none') {
+					document.getElementById(divId).style.display='block';
+				}
+				else {
+					document.getElementById(divId).style.display = 'none';
+				}
+			}
+		</script>
+
+		<!-- se define la funcion activar elemento -->
+		<script type="text/javascript">
+
+		var activeElemId;
+
+		function activateElem(elemId) {
+		
+		  //se comprueba si ya esta activo, en ese caso no se a�ade el check visto
+			if(enlaceAunNoVisto(elemId)) {
+				marcarEnlaceVisto(elemId);
+			}
+
+		 //se activa el elemento seleccionado, y se desactiva el que ahora esta activo
+			document.getElementById(elemId).className="activeElem";
+			if(null!=activeElemId) {
+			document.getElementById(activeElemId).className="desactiveElem";
+			}
+			activeElemId=elemId;
+			ShowHide('menuPortales');
+			
+		}
+
+		function enlaceAunNoVisto(elemId) {
+			elem = document.getElementById(elemId)		
+			for(var i = 0; i < elem.children.length; i++){
+				if(elem.children[i].id == 'visto'){
+					return false;
+				}
+			}
+			return true;	
+		}
+
+		function marcarEnlaceVisto(elemId) {
+
+			var elem = document.getElementById(elemId);
+			elem.style.textDecoration="line-through";
+
+			var visto=document.createElement('visto');
+			visto.id="visto";
+			elem.appendChild(visto);
+	   }
+
+
+	   
+		function cambiaHRef(anchorId, url) {
+			var a = document.getElementById(anchorId);
+			a.href=url+'#';		
+		}
+
+		function obtenerProfesion() {
+			return document.getElementById('professio').value;
+		}
+		</script>
+
+
+
+
+
+		
+		
+	<br>
+
+		<!-- se define la pagina principal -->
+		<div align="right">by Enric Jaen Villoldo</div>
+		
+		<!-- se define la tabla de portales -->
+			<table class="portalstable">
+			<tr valign="top">
+
+			<td class="menuportales" id="menuPortales" >
+
+		 <p align="right" style="text-padding:0px; height:0px;  font-weight:bold; font-size:12px;"> <span id="avui" style="border:1px; color:#8C4619"></span></p>
+
+
+
+		<table id="tablaHome" style="padding:0px; border:0;  width:100%; padding-top:0px">
+		<tr style="padding:0px; border:0">
+		</tr>
+		<tr>
+		  <td>
+			<a href="index.html"> 
+			<h4>ATDD (Aceptance Test Driven Development)</h4>
+			</a>
+		 </td>
+	</tr>
+		</table>
+
+
+
+		<script type="text/javascript">
+
+		function today(){
+		var currentDate = new Date()
+		  var day = currentDate.getDate()
+		  var month = currentDate.getMonth() + 1
+		  var year = currentDate.getFullYear()
+		  return day + "-" + month + "-" + year;
+		}
+
+		//se pone la fecha actual
+		var newdiv=document.createElement('div');
+		var text = document.createTextNode(today());
+		newdiv.appendChild(text);
+		var container = document.getElementById("avui");
+		container.appendChild(newdiv);
+
+
+		</script>
+
+		
+		<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('at');">
+			Acceptance tests<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="at" style="display:none">
+			<ul>
+			
+			<li id="at1">
+			
+			<a  onclick="javascript:activateElem('at1');" href="http://blog.8thlight.com/doug-bradbury/2011/04/26/ten-ways-to-do-acceptance-testing-wrong.html" target="portal"/>
+			10 Ways to Do Acceptance Testing Wrong (2011)
+			</a>
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+		
+		  
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('specbyexample');">
+			Specification by example<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="specbyexample" style="display:none">
+			<ul>
+			
+			<li id="spec1">
+			<a  onclick="javascript:activateElem('spec1');" href="http://www.specificationbyexample.com/" target="portal"/>
+			Specification by example (book, gojko)</a>
+
+			<li id="spec2">
+			<a  onclick="javascript:activateElem('spec2');" href="http://www.greenpeppersoftware.com/confluence/display/GPW/Home/#" target="portal"/>
+			Green pepper tool</a>
+			
+			
+			<li id="spec3">
+			<a  onclick="javascript:activateElem('spec3');" href="http://www.thoughtworks-studios.com/twist-agile-testing" target="portal"/>
+			twist</a>
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		
+		
+		
+		  		  <!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('tools');">
+			Tools<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="tools" style="display:none">
+			<ul>
+			
+			<li id="tool1">
+			<a  onclick="javascript:activateElem('tool1');" href="http://www.thoughtworks-studios.com/twist-agile-testing" target="portal"/>
+			Twist</a>
+
+			<li id="tool1">
+			<a  onclick="javascript:activateElem('tool1');" href="http://www.jsystemtest.org/" target="blank"/>
+			jsystem</a>
+
+			
+			
+			<li id="tool2">
+			<a  onclick="javascript:activateElem('tool3');" href="http://www.thoughtworks-studios.com/twist-agile-testing" target="portal"/>
+			Selenium</a>
+
+			<li id="tool3">
+			<a  onclick="javascript:activateElem('tool3');" href="http://www.thoughtworks-studios.com/twist-agile-testing" target="portal"/>
+			Windmill</a>
+
+			<li id="tool4">
+			<a  onclick="javascript:activateElem('tool4');" href="http://www.thoughtworks-studios.com/twist-agile-testing" target="portal"/>
+			Fitness</a>
+
+			<li id="tool5">
+			<a  onclick="javascript:activateElem('tool5');" href="http://www.thoughtworks-studios.com/twist-agile-testing" target="portal"/>
+			Sahi</a>
+
+
+			<li id="tool6">
+			<a  onclick="javascript:activateElem('tool6');" href="https://github.com/jnicklas/capybara#readme" target="blank"/>
+			capybara (ruby)</a>
+
+			<li id="tool7">
+			<a  onclick="javascript:activateElem('tool7');" href="http://concordion.org" target="portal"/>
+			concordion (specs en html)</a>
+			
+
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+		
+		
+		
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('fit');">
+			FIT / Fitnesse<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="fit" style="display:none">
+
+			<ul>
+			<li id="fit1">
+			<a  onclick="javascript:activateElem('fit1');" href="http://fitnesse.s3.amazonaws.com/tdd_net_with_fitnesse.pdf" target="portal">
+			tdd net with fitnesse (pdf, gojko)</a>
+			
+			<li id="fit2">
+			<a  onclick="javascript:activateElem('fit2');" href="http://www.lulu.com/shop/gojko-adzic/bridging-the-communication-gap-specification-by-example-and-agile-acceptance-testing/ebook/product-20641470.html" target="portal">
+			bridging the communication gap specification by example-and-agile-acceptance-testing (book, gojko)</a>
+	
+			<li id="fit3">
+			<a  onclick="javascript:activateElem('fit3');" href="http://skillsmatter.com/podcast/agile-testing/martin-gijsen-comparing-fitnesse-cucumber-and-keywords-for-domain-specific-test-languages" target="portal"/>
+			comparing fitnesse-cucumber (video, Martin Gijsen)</a>
+				
+				
+			<li id="fit4">
+			<a  onclick="javascript:activateElem('fit4');" href="http://deanalist.nl/" target="portal"/>
+			deanalist (company, Martin Gijsen)</a>
+			
+			
+			<li id="fit5">
+			<a  onclick="javascript:activateElem('fit5');" href="http://neuri.co.uk" target="portal"/>
+			neuri (company, Gojko, David Evans)</a>
+			
+			
+			<li id="fit6">
+			<a  onclick="javascript:activateElem('fit6');" href="http://www.czechtest.com/fitnesse-and-selenium" target="portal"/>
+			fitnesse\&selenium workshop 21 - 22 March 2013 in Prague (Martin Gijsen)</a>
+
+
+			<li id="fit7">
+			<a  onclick="javascript:activateElem('fit7');" href="fitnesse.org" target="portal"/>
+			fitnesse</a>
+
+			
+			<li id="fit8">
+			<a  onclick="javascript:activateElem('fit8');" href="http://my.safaribooksonline.com/book/software-engineering-and-development/software-testing/0321269349" target="portal"/>
+			Fit for Developing Software: Framework for Integrated Tests (book, Rick Mugridge; Ward Cunningham)</a>
+
+			<li id="fit9">
+			<a  onclick="javascript:activateElem('fit9');" href="http://vimeo.com/8041760" target="_blank"/>
+			Writing Maintainable Automated Acceptance Tests</a>
+			
+			
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		  
+		  
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('selenium');">
+			Selenium<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="selenium" style="display:none">
+			<ul>
+			
+			<li id="sel1">
+			<a  onclick="javascript:activateElem('sel1');" href="http://testingbot.com/" target="portal"/>
+			testingbot (enterprise)</a>
+
+
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		  
+
+
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('experts');">
+			Experts<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="experts" style="display:none">
+			<ul>
+			
+			<li id="e1">
+			<a  onclick="javascript:activateElem('e1');" href="http://www.linkedin.com/in/martingijsen" target="_blank"/>
+			Martin Gijsen </a>
+			
+
+			<li id="e2">
+			<a  onclick="javascript:activateElem('e2');" href="http://gojko.net/" target="portal"/>
+			Gojko Adzic (fit)</a>
+
+			<li id="e3">
+			<a  onclick="javascript:activateElem('e3');" href="http://www.linkedin.com/in/wolframarnold" target="_blank"/>
+			Wolfram Arnold (rails tdd)</a>
+
+			<li id="e4">
+			<a  onclick="javascript:activateElem('e4');" href="http://lassekoskela.com/" target="portal"/>
+			Lasse Koskela (atdd for java)</a>
+			
+			<li id="e5">
+			<a  onclick="javascript:activateElem('e5');" href="http://railsphd.com/" target="portal"/>
+			Michael de Silva (rails)</a>
+			
+			<li id="e6">
+			<a  onclick="javascript:activateElem('e6');" href="http://blog.mattwynne.net" target="portal"/>
+			Matt Wynne (bdd, cucumber)</a>
+			
+			
+			<li id="e7">
+			<a  onclick="javascript:activateElem('e7');" href="http://dhemery.com/" target="portal"/>
+			Dale H. Emery (atdd)</a>
+
+
+			<li id="e8">
+			<a  onclick="javascript:activateElem('e8');" href="http://testerstories.com/?p=931" target="portal"/>
+			Jeff Nyman (bdd, cucumber, watir)</a>
+			
+			
+			<li id="e9">
+			<a  onclick="javascript:activateElem('e9');" href="http://www.davidpeterson.co.uk/" target="portal"/>
+			Dave Peterson (concordion	)</a>
+			
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		  
+		  
+		  	<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('cucumber');">
+			Cucumber<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="cucumber" style="display:none">
+			<ul>
+			
+			<li id="cuc1">
+			<a  onclick="javascript:activateElem('cuc1');" href="http://skillsmatter.com/podcast/agile-testing/martin-gijsen-comparing-fitnesse-cucumber-and-keywords-for-domain-specific-test-languages" target="portal"/>
+			comparing fitnesse-cucumber (video)</a>
+
+			<li id="cuc2">
+			<a  onclick="javascript:activateElem('cuc2');" href="http://skillsmatter.com/podcast/agile-testing/refuctoring-your-cukes" target="portal"/>
+			Refuctoring Your Cukes</a>
+
+			<li id="cuc3">
+			<a  onclick="javascript:activateElem('cuc3');" href="http://cukes.info/" target="portal"/>
+			Cucumber page</a>
+
+			<li id="cuc4">
+			<a  onclick="javascript:activateElem('cuc4');" href="http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off" target="portal"/>
+			Cucumber boring scenarios</a>
+
+
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		  
+
+
+		  	<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('rspec');">
+			Rspec (Rails testing)<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="rspec" style="display:none">
+			<ul>
+			
+			<li id="rspec1">
+			<a  onclick="javascript:activateElem('rspec1');" href="http://marakana.com/s/post/1145/efficient_rail_test-driven_development_course" target="portal"/>
+			efficient rail tdd (video  6-week course)</a>
+
+			
+			<li id="rspec2">
+			<a  onclick="javascript:activateElem('rspec2');" href="http://railsphd.com/" target="portal"/>
+			Personal Rails Training Classes (Michael de Silva)</a>
+
+			<li id="rspec3">
+			<a  onclick="javascript:activateElem('rspec3');" href="http://railscasts.com/episodes/275-how-i-test" target="portal"/>
+			rspec</a>
+
+			
+			<li id="rspec4">
+			<a  onclick="javascript:activateElem('rspec4');" href="http://it-ebooks.info/book/77/" target="portal"/>
+			The RSpec Book (pdf)</a>
+
+			<li id="rspec5">
+			<a  onclick="javascript:activateElem('rspec5');" href="http://omakaselabs.com/" target="portal"/>
+			omakalabs (company RoR consulting)</a>
+
+			
+			<li id="rspec6">
+			<a  onclick="javascript:activateElem('rspec6');" href="http://www.linkedin.com/groups/RSpec-1300277?home=&gid=1300277&trk=anet_ug_hm&goback=%2Egmp_1300277%2Egde_1300277_member_219611183" target="_blank"/>
+			Rspec group (linkedin)</a>
+
+			<li id="ruby1">
+			<a  onclick="javascript:activateElem('ruby1');" href="https://groups.google.com/forum/?fromgroups=#!topic/ruby-capybara/G1VxpfudlpQ" target="blank"/>
+			capybara vs watir</a>
+			
+
+			<li id="ruby2">
+			<a  onclick="javascript:activateElem('ruby2');" href="http://watirmelon.com/" target="portal"/>
+			watirmelon</a>
+
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+		  
+		  
+		  
+		  	<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('bdd');">
+			BDD<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="bdd" style="display:none">
+			<ul>
+			
+			<li id="bdd1">
+			<a  onclick="javascript:activateElem('bdd1');" href="http://behat.org/" target="portal"/>
+			behat (bdd for php)</a>
+
+			
+			<li id="bdd2">
+			<a  onclick="javascript:activateElem('bdd2');" href="http://skillsmatter.com/course/agile-testing/gojko-adzics-hands-on-agile-acceptance-testing-and-specification-by-example-with-fitnesse/rl-890" target="portal"/>
+			 BDD for Developers 2 day workshop(gojko)</a>
+
+			 
+			 <li id="bdd3">
+			<a  onclick="javascript:activateElem('bdd3');" href="http://techblog.daveastels.com/2005/07/05/a-new-look-at-test-driven-development/" target="portal"/>
+			 a new look to tdd (Dave Astels,2005)</a>
+	
+
+		 
+			 <li id="bdd4">
+			<a  onclick="javascript:activateElem('bdd4');" href="http://concordion.org/Technique.html" target="portal"/>
+			 Write specifications, not scripts</a>
+		
+		
+			 <li id="bdd5">
+			<a  onclick="javascript:activateElem('bdd5');" href="http://www.blogger.com/comment.g?blogID=3933266989882835478&postID=212308724153924927" target="blank"/>
+			 Refactoring Given/When/Then (cucumber vs concordion) (2010)</a>
+
+			 <li id="bdd6">
+			<a  onclick="javascript:activateElem('bdd6');" href="http://blog.davidpeterson.co.uk/2011/01/bdd-concrete-examples-arent-enough.html" target="blank"/>
+			 BDD: concrete examples aren't enough (2011)</a>
+
+			 
+		
+		
+		
+
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('agiletesting');">
+			Agile Testing<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="agiletesting" style="display:none">
+			<ul>
+			
+			<li id="agt1">
+			<a  onclick="javascript:activateElem('agt1');" href="http://www.agiletestingdays.com/award.php" target="portal"/>
+			Most Influential Agile Testing Professional Person </a>
+			
+			
+			<li id="agt2">
+			<a  onclick="javascript:activateElem('agt2');" href="https://twitter.com/search?q=%23agiletd&src=hash" target="_blank"/>
+			Twitter agile testing </a>
+			
+			
+			<li id="agt3">
+			<a  onclick="javascript:activateElem('agt3');" href="http://skillsmatter.com/course/agile-testing/lisa-crispin-agile-testing-workshop/rl-890" target="_blank"/>
+			Practical Agile Testing 3day workshop  5 May 2013 (lisa crispin)</a>
+
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+		  
+			<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('zqc');">
+			Zero Quality Control<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="zqc" style="display:none">
+			<ul>
+			
+			<li id="z1">
+			<a  onclick="javascript:activateElem('z1');" href="http://gojko.net/2007/05/09/the-poka-yoke-principle-and-how-to-write-better-software/" target="portal"/>
+			the poka yoke principle</a>
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+		  
+		  
+		  <!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('groups');">
+			Groups<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="groups" style="display:none">
+			<ul>
+			
+			<li id="g1">
+			<a  onclick="javascript:activateElem('g1');" href="http://agiletesting.org.uk/" target="portal"/>
+			agile testing group UK</a>
+
+			<li id="g2">
+			<a  onclick="javascript:activateElem('g2');" href="http://www.linkedin.com/groups/Spain-Testing-Professionals-1779297" target="portal"/>
+			Spain testing professionals (Linkedin) </a>
+						
+			<li id="g3">
+			<a  onclick="javascript:activateElem('g3');" href="http://www.linkedin.com/groups/Spain-Testing-Professionals-1779297" target="portal"/>
+			Spain testing professionals (Linkedin) </a>
+	
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+		  <!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('confs');">
+			Conferencias<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="confs" style="display:none">
+			<ul>
+			
+			<li id="c1">
+			<a  onclick="javascript:activateElem('c1');" href="http://www.ministryoftesting.com/training-events/testbash-2-0/" target="portal"/>
+			Testbash-2.0</a>
+	
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+		  		  <!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('blogs');">
+			Blogs<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="blogs" style="display:none">
+			<ul>
+			
+			<li id="b1">
+			<a  onclick="javascript:activateElem('b1');" href="http://testingfuncional.wordpress.com/" target="portal"/>
+			Testing Funcional (Mauri Edo)</a>
+	
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+
+		  	  <!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('bp');">
+			Best Practices<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="bp" style="display:none">
+			<ul>
+			
+			<li id="bp1">
+			<a  onclick="javascript:activateElem('bp1');" href="https://leanpub.com/pride-and-paradev" target="blank"/>
+			a collection of agile software testing contradictions (ebook)</a>
+	
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+			
+		  
+
+		  	<!-- CATEGORIA -->
+			<div>
+			<p class="categoria1Portal" onclick="javascript:ShowHide('webprog');">
+			web programming<a href="javascript:;"> </a></p>
+			</div>
+		   <div id="webprog" style="display:none">
+			<ul>
+			
+			<li id="wprog1">
+			<a  onclick="javascript:activateElem('wprog1');" href="http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks" target="portal"/>
+			comparison of web frameworks</a>
+			
+			
+			<li id="wprog2">
+			<a  onclick="javascript:activateElem('wprog2');" href="http://en.wikipedia.org/wiki/Ruby_(programming_language)#Ruby_on_Rails" target="portal"/>
+			ruby on rails</a>
+			
+			
+			
+			</ul>
+		  </div>
+		  <!-- FI CATEGORIA -->
+
+		  
+		  
+http://testingfuncional.wordpress.com/		  
+		  
+			<br>
+
+			</td>
+
+			<!-- se define el panel abrir/cerrar -->
+			<td style="cursor:pointer; width:6%; border:0; background-image:url('anilla6d.jpg');background-repeat:no-repeat-y" onclick="javascript:ShowHide('menuPortales');">
+			<a href="javascript:;"> </a>
+			</td>
+			<!-- se define el panel frame -->
+
+			<script language="JavaScript">
+			function onLoadPortalFrame() {
+				window.scrollTo(0,0);
+
+			}
+			</script>
+
+			<!-- se define el frame para el portal. Se indica la proporcion -->
+			<td width="70%">
+			<iframe  src="home.html" width ="100%"  name="portal" onload="onLoadPortalFrame();">
+			</iframe>
+			</td>
+
+			</tr>
+			</table>
+
+
+
+
+		</BODY>
+		</HTML>

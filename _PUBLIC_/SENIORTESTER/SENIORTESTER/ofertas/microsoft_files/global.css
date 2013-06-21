@@ -1,0 +1,1444 @@
+/* CSS Document */
+html {
+	height:100%;
+}
+body {
+	margin:0px 0px 0px 0px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1.0em;
+	background:#f4f4f4;
+	height:100%;
+	width:100%;
+}
+/**** Page containers ****/
+.outerShell {
+	display:block;
+	clear:both;
+	margin:0px auto 0px auto;
+	padding:0px;
+	border:1px solid #bbbbbb;
+}
+.innerShell {
+	float:left;
+	display:block;
+	clear:both;
+	background-color:#ffffff;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 15px 0px;
+	font-size:11px;
+	background:#FFFFFF;
+}
+.outerWidth {
+	width:940px; /* Set this attribute in pixels for the default outer width */
+}
+.innerWidth {
+	width:908px; /* Set this attribute in pixels for the default inner width - set to [(outerWidth] - ((content:padding-left+content:padding-right)+2)])*/
+}
+.headerWidth {
+	/* Usually the same as innerWidth */
+}
+/**** Main content area ****/
+.header, .subheader, .menu, .content, .footer {
+	display:block;
+	clear:both;
+	float:left;
+	margin:0px 0px 0px 0px;
+}
+.header {
+	width:100%;
+}
+.header img {
+	overflow:hidden;
+	display:block;
+}
+.content {
+	padding:0px 15px 15px 15px;
+	display:block;
+	float:left;
+}
+.footer {
+	padding:10px 0 0 0;
+	width:100%;
+}
+.footer-links {
+	float:left;
+}
+.footer-links a, .footer-poweredby a {
+	padding:0 6px 3px 6px;
+	border-right: 1px solid #bbb;
+	line-height:120%;
+	float:left;
+	display:block;
+}
+.footer-links a:first-child {
+	padding-left:0px;
+}
+.footer-links a:last-child {
+	border:0;
+}
+.footer-poweredby {
+	float:right;
+}
+.footer-poweredby a:first-child {
+	padding-left:0;
+}
+.footer-poweredby a:last-child {
+	border:0;
+	padding-left:0;
+	padding-right:0;
+	float:none;
+	display:inline;
+}
+.poweredbyj2w {
+	padding-left:5px;
+	display:block;
+	float:left;
+	border:0;
+}
+.poweredbyj2w a {
+	border:0;
+	float:none;
+	display:inline;
+	padding:0;
+}
+.text {
+	padding:15px 0px 0px 0px;
+	display:block;
+}
+.policy {
+	font-size:85%;
+	clear:both;
+}
+/**** Search results ****/
+.searchResultsShell {
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	padding:0px 0px 0px 0px;
+	width:100%;
+}
+.searchResults {
+	margin:0px 0px 0px 0px;
+	width:100%;
+}
+.searchResultsShell.newjobs {
+	border-top:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+.searchResults th {
+	font-weight:bold;
+	font-size:110%;
+	padding:8px 10px 8px 10px;
+	border-bottom:1px solid #dddddd;
+	background-image: url("/images/shared/background_srch.gif");
+	background-repeat: repeat-x;
+}
+.searchResults td {
+	padding:5px 10px 5px 10px;
+	border-bottom:1px solid #dddddd;
+}
+td.test {
+	margin:2px;
+	padding:0;
+	width:900px;
+}
+.dbOutputRow1 {
+	background:#f9f9f9;
+	color: #000000;
+}
+.dbOutputRow2 {
+	background:#ffffff;
+	color: #000000;
+}
+.paginationShell {
+	display:block;
+	clear:both;
+	background-image: url("/images/shared/background_srch.gif");
+	background-repeat: repeat-x;
+	padding:8px 0px 8px 0px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	margin:0px 0px 0px 0px;
+	width:100%;
+}
+.pagination-top {
+	margin:0;
+	clear:both;
+}
+.pagination {
+	padding:0px 10px 0px 10px;
+}
+
+.pagination .srHelp {
+	display: none;
+}
+
+/**** Universal modifiers ****/
+.half {
+	width:50%;
+}
+.full {
+	width:100%;
+}
+.floatleft {
+	float:left;
+}
+.floatright {
+	float:right;
+}
+.pad {
+	padding:10px 10px 10px 10px;
+}
+.padright {
+	padding-right:15px;
+}
+.clear {
+	clear:both;
+	height:0px;
+	overflow:hidden;
+	display:block;
+}
+.clearboth {
+	clear:both;
+}
+.group {
+	display:block;
+	clear:both;
+	padding:15px 15px 0px 15px;
+}
+.reset {
+	margin:0;
+	padding:0;
+}
+/**** Submit buttons ****/
+.submit {
+	font-size:90% !important;
+	padding:2px 10px 2px 10px !important;
+}
+/* for Internet Explorer */
+/*\*/
+* html .submit, input.submit {
+	padding:2px 5px 2px 5px !important;
+	overflow-x: hidden !important;
+}
+/**/
+.checkbox {
+	float:left;
+	/* BEGIN to make checkbox look the same in IE as FFox */
+	width:13px;
+	height:13px;
+	overflow:hidden;
+	/* END to make checkbox look the same in IE as FFox */
+	clear:none;
+	display:inline;
+	top:3px;
+	margin:0px 7px 0px 0px;
+}
+.divider {
+	display:block;
+	clear:both;
+	margin:5px 0px 10px 0px;
+	padding:0px 0px 0px 0px;
+	height:0px;
+	border-top:1px solid #E2E2E3;
+	overflow:hidden;
+	line-height:0px;
+	background:#cccccc;
+}
+.spacer {
+	display:block;
+	clear:both;
+	float:left;
+	height:10px;
+	width:100%;
+}
+/**** Global element styles ****/
+td {
+	vertical-align:top;
+}
+h1 {
+	font-size:115%;
+	margin:15px 0px 5px 0px;
+	padding:0px 0px 0px 0px;
+	color:#000000;
+}
+h4 {
+	font-size:105%;
+	margin:15px 0px 10px 0px;
+	color:#555555;
+}
+p {
+	margin:5px 0px 10px;
+	line-height:140%;
+}
+a {
+	color: #3166CC;
+}
+a:hover {
+	text-decoration:none;
+}
+/**** Global popup window ****/
+.popBody  {
+	margin:0px 0px 0px 0px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background:#ffffff;
+	font-size:15px !important;
+	width:100%;
+	display:block;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.popShell {
+	margin:20px auto 20px auto;
+	font-size:75%;
+	background:#ffffff;
+	display:block;
+	position:relative;
+	left:-15px;
+}
+/*For Internet Explorer 6 */
+* html .popShell {
+	left:0px;
+}
+.popWidth {
+	width:643px;
+}
+
+/**** Global search box ****/
+.search {
+	padding:0;
+	margin:0;
+	display:block;
+	float:left;
+}
+.search.email {
+	position:relative;
+	left:15px;
+}
+.search.email .subscriptions {
+	padding:10px 15px 10px 15px;
+	width:365px;
+}
+.search.email .legend {
+	font-size:75%;
+}
+.search.email p {
+	font-size:75%;
+}
+.search .legend {
+	padding:5px 8px 5px 8px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #999999;
+	font-weight:bold;
+	color:#555555;
+	background-color:#ffffff;
+	float:left;
+	position:relative;
+	top:12px;
+	left:10px;
+	display:inline;
+	clear:both;
+	margin:0px 0px 5px 0px;
+	z-index:100;
+}
+.search .legend label {
+	margin: 0;
+}
+.search ul {
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 15px;
+	list-style-type:square;
+	float:left;
+	clear:both;
+	display:block;
+	line-height:150%;
+}
+.search li {
+	padding:0px;
+	margin:0px 0px 0px 15px;
+}
+.search label {
+	float:left;
+	margin:3px 5px 0px 0px
+}
+.search form {
+	margin:0px;
+	padding:0px;
+	display:block;
+	clear:none;
+	float:left;
+}
+.search input {
+	margin:0px 5px 0px 0px;
+	padding:0px;
+	float:left;
+}
+.search .btn {
+	background-image: url("/images/shared/background_btn.gif");
+	background-repeat: repeat-x;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #555555;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	font-size: 11px;
+	color:#333333;
+	margin:0px 0px 0px 0px;
+	padding:1px 2px 2px 2px;
+	cursor:pointer;
+	font-weight:bold;
+	overflow: visible;
+	position:relative;
+	vertical-align:top;
+	float:left;
+	display:block;
+}
+
+/**** Search jobs/categories ****/
+#searchbycat, #searchjobs, #subscribe, .searchbygroup, .subscriptions, .subscribe {
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	background-image: url("/images/shared/background_srch.gif");
+	background-repeat: repeat-x;
+	background-color: #ffffff;
+	margin:0px 0px 0px 0px;
+	clear:both;
+	float:left;
+	display:block;
+}
+#searchbycat, #subscribe, .searchbygroup, .subscriptions, .subscribe {
+	width:100%;
+}
+#searchbycat p, #searchjobs p,.searchbygroup p {
+	padding:0px 0px 0px 15px;
+	margin:0px;
+}
+#searchbycat {
+	padding:15px 0px 15px 0px;
+	width:100%;
+}
+#searchbycat li {
+	padding-right:10px;
+}
+#category-header {
+	margin:10px 0;
+	clear:both;
+}
+#category-header h1 {
+	margin:0 0 15px 0;
+}
+#category-name {
+	margin:15px 0 5px 0;
+	display:block;
+	float:left;
+	font-size:175%;
+}
+.searchbygroup {
+	padding:15px 0px 15px 0px;
+	width:100%;
+	clear:both;
+}
+#searchbygroup .half {
+	width:48%;
+}
+#searchjobs, #esubscribe {
+	padding:12px 12px 12px 12px;
+}
+/*
+* html #searchjobs {
+	width:294px;
+}
+*/
+form.subscribeBox, form#subscribeBox {
+	padding:0px 12px 0px 12px;
+}
+#subscribe, .subscribe {
+	padding:12px 0px 12px 0px;
+}
+.subscribeNoJSMsg {
+	float: left;
+	padding: 5px 0 0 10px;
+}
+/* For IE6 */
+* html #subscribe, * html .subscribe {
+	width:100%;
+}
+#searchlink {
+	margin-top:15px;
+	float:right;
+}
+
+/* No search results found */
+#noresults {
+	clear:both;
+	border:2px solid #999;
+	padding:10px;
+	background-color:#f6f6f6;
+	margin-top:10px;
+}
+#attention {
+	clear:both;
+	font-size:135%;
+	font-weight:bold;
+	border-bottom:1px solid #e2e2e2;
+	padding-bottom:10px;
+}
+#attention-img {
+	vertical-align:middle;
+	display:inline-block;
+	margin-right:10px;
+}
+#noresults-message {
+	padding:15px 0 0 0;
+}
+#noresults-message h4 {
+	margin:5px 0 10px 0;
+	font-size:110%;
+}
+#noresults-subscribe {
+	position:relative;
+	display:inline-block;
+	margin:-10px 0 10px 0;
+	float:left;
+}
+#noresults-subscribe-label {
+	padding:5px 8px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #999999;
+	font-weight:bold;
+	color:#555555;
+	background-color:#ffffff;
+	float:left;
+	position:relative;
+	top:17px;
+	left:10px;
+	display:inline;
+	clear:both;
+	margin:0;
+	z-index:100;
+	line-height:100%;
+	font-size:11px;
+}
+.padbig {
+	padding:20px 15px 15px 15px;
+}
+.padsmall {
+	padding:15px;
+}
+.subscriptions p {
+	padding:5px 0px 5px 0px;
+	margin:0px 0px 0px 0px;
+	display:block;
+	float:left;
+	clear:both;
+	width:100%;
+}
+.subscriptions h1 {
+	margin:0px 0px 10px 0px;
+}
+.subscriptions .width {
+	width:283px;
+}
+/********** Form rows in subscription popups  *********************/
+.userinfoRow {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 6px 0px;
+	display:block;
+	float:left;
+	/*
+	clear:both;
+	width:100%;*/
+}
+
+.userinfoLabel {
+	display:block;
+	float:left;
+	width:150px;
+}
+.userinfoItem
+{
+	display:block;
+	float:left;
+}
+
+/**** Add RSS favorites box ****/
+#addRSSLinks {
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #BBB;
+	border-left:1px solid #DDD;
+	border-right:1px solid #BBB;
+	background-image: url("/images/shared/background_srch.gif");
+	background-repeat: repeat-x;
+	display:block;
+	float:left;
+	margin:30px 0px 0px 1px;
+	padding:15px 7px 14px 7px;
+	text-align:right;
+}
+#addRSSLinks a {
+	margin:0px 0px 0px 2px;
+	padding:0px;
+	display:block;
+	height:17px;
+	position:relative;
+	top:2px;
+}
+#addRSSLinks img, .rssFeedLinks img {
+	overflow:hidden;
+	display:block;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+.rssFeedLinks_right {
+	margin:0 20px 0 0;
+	padding:0;
+	position:relative;
+	float:right;
+	display:block;
+	width:290px;
+	top:0;
+	right:0;
+}
+.rsslinks-shell {
+	float:left;
+}
+.rssFeedLinks_subscribe {
+	padding-right:10px;
+	float:right;
+	width:290px;
+	position:relative;
+}
+#searchjobsrss {
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #BBB;
+	border-left:1px solid #DDD;
+	border-right:1px solid #BBB;
+	background-image: url("/images/shared/background_srch.gif");
+	background-repeat: repeat-x;
+	background-color: #FFF;
+	float:right;
+	display:block;
+	padding:14px 10px 0 10px;
+	z-index:1;
+	position:relative;
+	width:290px;
+	height:30px;
+}
+.rssFeedLinks_right a, .rssFeedLinks_left a {
+	margin:0 2px -1px 0;
+	height:17px;
+	position:relative;
+	top:2px;
+	overflow:hidden;
+	display:block;
+	float:left;
+}
+.rssFeedLinks_right a {
+	float:left;
+}
+.rssFeedLinks_left {
+	margin:0px 0px 0px 12px;
+	padding:0;
+	position:relative;
+	top:1px;
+}
+/* For IE6 */
+* html .rssFeedLinks {
+	margin-right:6px;
+}
+/**** Add chat link ****/
+.chat {
+	margin:10px 0px 0px 0px;
+	position:relative;
+	left:3px;
+}
+.chat img {
+	margin:0px;
+	padding:0px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	position:relative;
+}
+.chatHome {
+	float:right;
+	margin:0;
+	clear:none;
+	position:relative;
+	top:10px;
+}
+.chatCategory {
+	float:right;
+	*margin: 10px 0;  /* IE 6, 7 hack */
+}
+.chatSearch {
+	margin:0px 0px 0px 0px;
+	float:right;
+	clear:both;
+}
+.chatJob {
+	margin:0px 0px -15px 0px;
+	display:block;
+	clear: both;
+}
+
+.chatJob .chat {
+	float: right;
+	margin: 25px 0px -15px 0px;
+	*margin: 10px 0px 20px 0px; /* IE 6, 7 hack */
+}
+
+/**** Job display pages ****/
+.jobDisplayShell {
+	background:#fafafa;
+	border:1px solid #DDD;
+	clear:both;
+	margin:0;
+	float:left;
+	width:100%;
+	padding:0 0 15px 0;
+}
+.jobDisplay {
+	padding:0px 15px 0 15px;
+}
+.jobDisplay h4 {
+	margin:15px 0px 3px 0px;
+}
+.job table {
+	width:100%;
+}
+#job-description-spacer {
+	width: 20px;
+}
+#similar-jobs {
+	clear:both;
+	font-size:100%;
+	padding-top:10px;
+}
+#similar-jobs-label {
+	width:120px;
+	font-weight:bold;
+	display:inline-block;
+	vertical-align:top;
+}
+#similar-jobs-links {
+	display:inline-block;
+	width:80%;
+}
+.gainlayout {
+	min-height: 0;
+}
+.applylink {
+	float:right;
+	margin-top:15px;
+	position:relative;
+}
+a.apply {
+	background-image: url("/images/shared/background_btn.gif");
+	background-repeat: repeat-x;
+	border-top:1px solid #999;
+	border-bottom:1px solid #555;
+	border-left:1px solid #999;
+	border-right:1px solid #999;
+	font-size: 11px;
+	color:#555;
+	padding:3px 5px 4px 5px;
+	cursor:pointer;
+	font-weight:bold;
+	text-decoration:none;
+	display:block;
+}
+a:hover.apply {
+	color:#000;
+}
+
+/********** Optimize Text Highlight Style ********/
+.optimize {
+	background-color:yellow;
+}
+
+/********** Show/hide job fields ********/
+#job-title, .jobTitle h1 {
+	color: #555555;
+	font-size:125%;
+	margin:15px 0px 10px 0px;
+	float:left;
+}
+.jobLocation {
+	position:relative;
+	margin:0 0 15px 0;
+	padding:0;
+	width: 60%;
+}
+.jobDate {
+	position:relative;
+	min-width:80px;
+	display:block;
+	left:0;
+	margin:0;
+	padding:0;
+	width:60%;
+}
+.jobCompany {
+	display:none;
+}
+* html .jobDate {
+	width:80px;
+}
+th .jobScore{
+	position:relative;
+	background-color:yellow !important;
+	border-left:1px solid #DDD;
+	padding:8px 13px 8px 8px;
+}
+td .jobScore{
+	position:relative;
+	color: black;
+	font-size: 110%;
+	background-color:yellow !important;
+	border-left:1px solid #DDD;
+	padding:8px 2px 8px 8px;
+}
+.relevancyStop{
+	background-color:red !important;
+	padding:1px 1px 1px 1px;
+}
+P.error{
+	border: 1px solid orange;
+	padding:1px 1px 1px 38px;
+	min-height:40px;
+	background-image: url("/images/shared/warning.gif");
+	background-repeat: no-repeat;
+	background-color:#FFF;
+}
+
+/*
+.searchFilter {
+	color:#cccccc;
+}
+*/
+#back-to-search {
+	margin:10px 5px 10px 0;
+	float:left;
+	display:block;
+}
+/********** Section 508 Compliance ********/
+#skip {
+	position:absolute;
+	left:-1000px;
+	width:0px;
+	height:0px;
+	z-index:1;
+}
+
+/********** Top Jobs ***********/
+.topjobs-header {
+	width:100%;
+	float:left;
+}
+.breadcrumbtrail {
+	float:left;
+	font-size:90%;
+	display:block;
+	width:100%;
+}
+.breadcrumbtrail ul {
+	display:block;
+	float:left;
+	padding:0;
+	margin:10px 0 15px 0;
+	clear:both;
+	width:100%;
+	list-style-type:none;
+}
+.breadcrumbtrail ul li {
+	display:block;
+	float:left;
+	margin:0 5px 0 0;
+}
+.cap-first-letter:first-letter {
+	text-transform:capitalize;
+}
+
+/* Category Group Links on TLPs */
+.category-groups-wrapper {
+	clear:both;
+	margin:10px 0;
+	padding:15px 15px 5px 15px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	background:#ffffff url("/images/shared/background_srch.gif") 0 0 repeat-x;
+}
+.category-group-title {
+	margin:0 0 5px 0;
+	font-size:14px;
+}
+.category-group-list {
+	margin:5px 0 10px;
+	padding:0;
+	list-style-type:none;
+}
+.category-group-list li {
+	margin:0 0 5px 0;
+	padding:0;
+}
+
+
+/**** Reset password box ****/
+.resetpassword {
+	margin:0;
+	display:block;
+	float:left;
+	width:100%;
+}
+
+.resetpassword .legend {
+	padding:5px 8px 5px 8px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #999999;
+	font-weight:bold;
+	font-size:1.2em;
+	color:#555555;
+	background-color:#ffffff;
+	float:left;
+	position:relative;
+	top:12px;
+	left:10px;
+	display:inline;
+	clear:both;
+	margin:0px 0px 5px 0px;
+	z-index:100;
+}
+.resetpassword .legend label {
+	margin: 0;
+}
+
+/**** Search jobs/categories ****/
+#resetpasswordbox {
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #bbbbbb;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #bbbbbb;
+	background-image: url("/images/shared/background_srch.gif");
+	background-repeat: repeat-x;
+	background-color: #ffffff;
+	margin:0px 0px 0px 0px;
+	clear:both;
+	float:left;
+	display:block;
+	width:100%;
+}
+#resetpasswordbox p {
+	padding:0px 0px 0px 20px;
+	margin:0px;
+}
+
+#resetpasswordbox h3 {
+	padding:30px 0px 0px 20px;
+	font-size: 120%;
+}
+
+.resetpasswordform {
+	padding:0px 0px 0px 20px;
+}
+
+.resetpasswordform .label {
+	font-weight:bold;
+}
+#unsubscribe-form {
+	border:1px solid #ddd;
+	padding:15px;
+	background: #f8f8f8;
+}
+#unsubscribe-form .form-item {
+	margin-bottom:15px;
+	font-size: 12px;
+}
+.form-item td {
+	padding:0 0 10px 0;
+}
+.unsubscribe-secondary {
+	color:#444;
+	clear: both;
+	display: block;
+	font-size: 11px;
+}
+input#unsubscribe-button {
+	padding:10px 10px !important;
+}
+#unsubscribe-form label {
+	display: block;
+}
+
+#pagenotfound {
+	font-size: 12px;
+	padding:15px 0;
+	min-height: 300px;
+}
+#pagenotfound ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+#pagenotfound li {
+	margin:5px;
+	padding:0;
+}
+
+/* *** Social Apply Button ************************************************* */
+
+.btnSocialApply  {
+	display: none;
+	padding: 0;
+}
+
+	.btnSocialApply li {
+		float: left;
+		list-style: none;
+	}
+
+	.btnSocialApply li a {
+		display: block;
+		white-space: nowrap;
+	}
+
+	.btnSocialApply a.startApply, .btnSocialApply a.manualApply {
+		text-decoration: none;
+	}
+
+		.btnSocialApply li ul.sub {
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			display: none;
+			background-color: white;
+			z-index: 100;
+			border-radius: 5px 0px 5px 5px;
+			box-shadow: 1px 1px 3px 1px #AAA;
+		}
+
+		.btnSocialApply ul.sub {
+			right: 0;
+		}
+
+		.btnSocialApply .networkContainer {
+			background-image: url('/images/shared/background_btn.gif');
+			border: 1px solid #CCC;
+			border-radius: 5px;
+			box-shadow: 1px 1px 4px #DDD;
+			padding: 5px 8px;
+		}
+
+		.btnSocialApply .networkContainer:hover {
+			cursor: pointer;
+			border-color: #999;
+		}
+
+		.btnSocialApply .networkContainer img.networkIcon {
+			padding-right: 8px;
+		}
+
+		.btnSocialApply li ul li {
+			float: none;
+			display: block;
+			padding: 8px;
+			border-top: 1px dotted #DDD;
+			white-space: nowrap;
+		}
+
+		.btnSocialApply li ul li.loading {
+			display: none;
+			text-align: center;
+			white-space: normal;
+			padding: 0 10px;
+		}
+
+		.btnSocialApply li ul li.manual {
+			font-size: smaller;
+			text-align: center;
+		}
+
+		.btnSocialApply li ul li:hover {
+			background: #EEE;
+		}
+
+		.btnSocialApply li ul li a {
+			display: inline;
+		}
+
+		.btnSocialApply > li img {
+			vertical-align: text-bottom
+		}
+
+		.btnSocialApply td.sabTdHelp {
+			vertical-align: middle;
+			padding-left: 6px;
+		}
+
+div.emailGetter {
+	display: none;
+	margin-top: 8px;
+	font-size: 11px;
+}
+
+div.emailGetter input {
+	font-size: 12px;
+}
+
+div.emailGetter input[type='button'] {
+	background: #333 url('/images/shared/background_btn.gif') 0 0 repeat-x;
+	border: 1px solid #999;
+	border-bottom: 1px solid #555;
+	font-size: 11px;
+	margin: 1px 0 0 0;
+	padding: 2px 2px 1px 2px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.btnSocialApply .getterMsg {
+	color: red;
+	display: none;
+	font-size: 10px;
+	margin-top: 5px;
+	white-space: normal;
+}
+
+.btnSocialApply input.errorField {
+	background-color: #FFD8DF;
+}
+
+/* *** Social Subscribe Button ********************************************* */
+
+#socialSubscribe {
+	width: -moz-min-content;
+}
+
+.btnSocialSubscribe  {
+	padding: 0;
+	margin: 0;
+	width: 180px;
+}
+
+	.btnSocialSubscribe li {
+		float: left;
+		list-style: none;
+	}
+
+	.btnSocialSubscribe li a {
+		display: block;
+		white-space: nowrap;
+		font-size: 11px;
+	}
+
+	.btnSocialSubscribe a.startSubscribe {
+		text-decoration: none;
+	}
+
+		.btnSocialSubscribe li ul {
+			padding: 0;
+			border-radius: 5px;
+			box-shadow: 1px 1px 3px 1px #AAA;
+		}
+
+		.btnSocialSubscribe ul.sub {
+			right: 0;
+			background-color: white;
+			margin: 0;
+		}
+
+		.btnSocialSubscribe .networkContainer {
+			background-image: url('/images/shared/background_btn.gif');
+			border: 1px solid #CCC;
+			border-radius: 5px;
+			box-shadow: 1px 1px 4px #DDD;
+			padding: 5px 8px;
+			min-width: 180px;
+			width: 100%;
+		}
+
+		.btnSocialSubscribe .networkContainer:hover {
+			cursor: pointer;
+			border-color: #999;
+		}
+
+		.btnSocialSubscribe .networkContainer img.networkIcon {
+			padding-right: 8px;
+		}
+
+		.btnSocialSubscribe li ul li {
+			float: none;
+			display: block;
+			padding: 8px;
+			white-space: nowrap;
+		}
+
+		.btnSocialSubscribe li ul li.loading {
+			display: none;
+			text-align: center;
+			white-space: normal;
+			padding: 0 10px;
+		}
+
+		.btnSocialSubscribe li ul li.manual {
+			font-size: smaller;
+			text-align: center;
+		}
+
+		.btnSocialSubscribe li ul li:hover {
+			background: #EEE;
+		}
+
+		.btnSocialSubscribe li ul li a {
+			display: inline;
+		}
+
+		.btnSocialSubscribe > li img {
+			vertical-align: text-bottom
+		}
+
+		.btnSocialSubscribe td.ssbTdHelp {
+			vertical-align: middle;
+			padding-left: 6px;
+		}
+
+.btnSocialSubscribe .ssbGetterMsg {
+	color: red;
+	display: none;
+	font-size: 10px;
+	margin-top: 5px;
+	white-space: normal;
+}
+
+	.btnSocialSubscribe input.errorField {
+		background-color: #FFD8DF;
+	}
+
+/* *** Social Buttons Common *********************************************** */
+
+img.rotated180 {
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	/* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2); */
+	-ms-transform:rotate(180deg);
+}
+
+div.socialMoreText {
+	font-size: smaller;
+	margin-top: 10px;
+	white-space: normal;
+}
+
+	div.socialMoreText ul {
+		border-radius: 0;
+		box-shadow: none;
+		margin: 0;
+		padding-left: 50px;
+	}
+
+	div.socialMoreText ul li {
+		padding: 0;
+		display: list-item;
+		list-style: disc;
+		margin-left: 0;
+		white-space: normal;
+		border: 0;
+	}
+
+/********** Links as Buttons **********/
+
+	a.fauxButton {
+		background-image: url("/images/shared/background_btn.gif");
+		background-repeat: repeat-x;
+		border: 1px solid #999;
+		border-bottom: 1px solid #555;
+		color: #555;
+		cursor: pointer;
+		display: block;
+		font-size: 20px;
+		font-weight: bold;
+		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+		padding: 5px 20px;
+		text-decoration: none;
+		-webkit-box-shadow: rgba(0,0,0,.3) 0px 2px 18px;
+		-moz-box-shadow: rgba(0,0,0,.3) 0px 2px 18px;
+	}
+	a.fauxButton:hover {
+		color: #3166CC;
+		-webkit-box-shadow: rgba(0,115,178,.4) 0px 2px 18px;
+		-moz-box-shadow: rgba(0,115,178,.4) 0px 2px 18px;
+	}
+
+/********** SSO Dialogs UI **********/
+
+	#ssoStack {
+		border-top: 10px solid #0073B2;
+		background: #EEE;
+		-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 18px;
+		-moz-box-shadow: rgba(0,0,0,.6) 0px 2px 18px;
+		padding: 20px;
+		width: 540px;
+		display: none;
+		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+		font-size: 1em;
+	}
+
+	#ssoStack #ssoClose {
+		background: url('/images/close-trans.png');
+		background-repeat: no-repeat;
+		display: inline;
+		cursor: pointer;
+		height: 30px;
+		position: absolute;
+		right: -10px;
+		top: -20px;
+		width: 30px;
+	}
+
+	#ssoStack div.stackView {
+		display: none;
+	}
+
+		#ssoStack div.stackView p {
+			text-align: center;
+			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			font-size: 1em;
+			color: black;
+		}
+
+	#ssoStack div.stackView ul.errorMessages {
+		color: red;
+		margin: 10px 0 0 140px;
+		padding: 0;
+		list-style: square outside none;
+	}
+
+		#ssoStack div.stackView ul.leftErrorMessages {
+			margin-left: 20px;
+		}
+
+	#ssoStack div.stackView ul.errorMessages li {
+		color: red;
+		list-style: square outside none;
+		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+		font-size: 1em;
+	}
+
+	#ssoStack div.stackView .notYou, #ssoStack div.stackView .forgotPwd, #ssoStack div.stackView .forgotPwdLogin {
+		font-size: 0.8em;
+	}
+	#ssoStack div.stackView .forgotPwd {
+		margin-left: 4px;
+	}
+	#ssoStack div.stackView .notYou {
+		display: inline-block;
+		margin-left: 10px;
+	}
+
+	#ssoStack div.stackView h1, #ssoStack div.stackView h2 {
+		color: black;
+		font-size: 1.4em;
+		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+		font-weight: bold;
+		margin: 0;
+		text-align: center;
+	}
+
+	#ssoStack div.stackView h1 {
+		font-family: Cambria,Georgia,"Hoefler Text","Liberation Serif",Utopia,"Nimbus Roman No9 L",Times,"Times New Roman",serif;
+		margin-bottom: 10px;
+	}
+
+	#ssoStack div.stackView h2 {
+		font-size: 1.1em;
+		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	}
+
+	#ssoStack div.stackView form {
+		margin-top: 20px;
+	}
+		#ssoStack div.stackView label {
+			width: 125px;
+			display: inline-block;
+			font-weight: bold;
+		}
+		#ssoStack div.stackView form input[type=text] {
+			width: 55%;
+			padding: 5px;
+		}
+		#ssoStack div.stackView form input[type=password] {
+			margin: 10px 0;
+			width: 55%;
+			padding: 5px;
+		}
+
+		#ssoStack a.viewSubmit {
+			display: block;
+			float: right;
+		}
+
+		#ssoStack #btnMemberLogin, #ssoStack #btnNewUser {
+			display: inline-block;
+			float: none;
+		}
+
+		#ssoStack a.viewSkip {
+			float: left;
+			margin-top: 10px;
+		}
+
+		#ssoStack a.ssoCancel {
+			margin-right: 10px;
+			font-weight: normal;
+		}
+
+	#ssoStack span.signInProgress {
+		display: none;
+	}
+
+	#ssoStack span.smallNote {
+		font-size: 0.8em;
+		font-style: italic;
+		color: #888;
+	}
+
+	#ssoStack #frmMemberLogin label {
+		display: block;
+		width: 100%;
+	}
+
+	#ssoStack #frmMemberLogin input[type='text'],
+	#ssoStack #frmMemberLogin input[type='password'] {
+		width: 85%;
+	}
+
+/* *** Locale Chooser ****************************************************** */
+
+	#localeWrapper {
+		display: none;
+		float: right;
+		font-weight: normal;
+		width: 272px;
+	}
+
+	#frmLocale {
+		display: inline-block;
+	}
+
+	#localeSelector {
+		font-size: smaller;
+	}

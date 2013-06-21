@@ -1,0 +1,348 @@
+/* --- Talent Community View Wrappers -------------------------------------------------- */
+
+#talentCommunityWrapper {
+	display: none;
+}
+
+	#talentCommunityHeader {
+
+	}
+
+		#talentCommunityHeader h1 {
+			margin: 0 0 15px;
+			font-size: 150%;
+		}
+
+#talentCommunityLoading {
+	height: 300px;
+	padding: 150px 140px 0 140px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#talentCommunityLoadingStatusAddlNotes {
+	font-weight: normal;
+	padding-top: 10px;
+}
+
+#talentCommunityWrapperLogin {
+
+}
+
+#talentCommunityWrapperThanks {
+
+}
+
+/* --- New Talent Community ------------------------------------------------------------ */
+
+noscript div.error {
+	text-align: center;
+	padding: 50px 0;
+	clear: left;
+	font-weight: bold;
+	border: 1px solid red;
+}
+
+#tcContent h1 {
+	margin: 0;
+	padding: 4px 0;
+}
+
+#tcContent table.formSection {
+	padding: 6px;
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	margin: 1.25em 0;
+}
+
+	#tcContent table.formSection td {
+		vertical-align: middle;
+	}
+
+	#tcContent table.formSection td.sectionName {
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	#tcContent table.formSection td.addlText {
+		width: 100%;
+		white-space: nowrap;
+		padding-top: 2px;
+	}
+
+#tcContent h1 a[name=MyAgents] {
+	color: black;
+}
+
+#messagingRow {
+	text-align: center;
+}
+
+#talentCommunityWrapper button {
+	cursor: pointer;
+}
+
+p.noLongerAvailable {
+	margin-top: 6px;
+	width: 260px;
+	color: red;
+}
+
+p.noLongerAvailable img {
+	vertical-align: middle;
+	margin-right: 8px;
+	margin-bottom: 12px;
+	float: left;
+}
+
+/* Log in with LinkedIn */
+#linkedin-wrapper {
+	position: relative;
+	margin:0 0 10px 0;
+	padding:0;
+	clear: both;
+}
+
+#liContacts {
+	border:1px solid #ddd;
+}
+
+#liContacts td {
+	padding:10px;
+	background: #fff url(/images/shared/background_srch.gif) top left repeat-x;
+	border-collapse: collapse;
+}
+.IN-widget {
+	position: relative;
+	float: right;
+	top:0;
+}
+
+#linkedinbutton  {
+	clear: left;
+	display: none;
+	position: relative;
+	top:-10px;
+}
+#apply-with-linkedin {
+	min-width: 200px;
+}
+#apply-with-linkedin #linkedinbutton {
+	position: relative;
+	top:0;
+	margin:0 0 15px 15px;
+}
+#apply-with-linkedin #liConnections{
+	position: relative;
+	top:-5px;
+	min-width: 240px;
+}
+
+/* --- Existing Talent Community ------------------------------------------------------- */
+
+#thanksMessage {
+	text-align: center;
+	margin: 30px 0 50px 0;
+}
+
+p.tcFooter {
+	font-style: italic;
+	color: gray;
+}
+
+.step {
+	font-weight:bold;
+	margin-right:10px;
+	text-transform:uppercase;
+}
+
+#dialogSavingIndicator {
+	font-size: 12px;
+	text-align: right;
+}
+
+#dialogSavingIndicator img {
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+div.error {
+	color: red;
+}
+
+#dialogSubscribeFooter {
+	font-size: 12px;
+	color: #666;
+}
+
+#tcAgentForm label {
+	display: block;
+	font-weight: bold;
+}
+
+#btnTCUpdate, #btnTCCancel {
+	display: none;
+	padding-left: 5px;
+}
+
+#btnTCPreview {
+	padding-left: 5px;
+}
+
+#btnTCDelete {
+	margin-top: 10px;
+}
+
+#btnThanksDone {
+	margin-top: 20px;
+	padding: 4px 10px;
+}
+
+#btnThanksDone:hover {
+	cursor: pointer;
+}
+
+#skipThisStepLink {
+	font-size:12px;
+	font-weight:bold;
+	text-align:right;
+	margin-top:10px;
+}
+
+#myAgents {
+	margin-top: 10px;
+}
+
+#myAgents td {
+	padding: 3px 0;
+	margin: 0;
+	vertical-align: top!important;
+}
+
+#myAgents tr[id]:hover {
+	background-color: #ECE8DA!important;
+}
+
+#myAgents .chkBoxCol {
+	text-align: center;
+	padding: 0 8px 6px 4px!important;
+}
+
+#myAgents .asCol {
+	width: 100%;
+	text-align: center;
+}
+
+#myAgents td.displayString {
+	padding-right: 10px;
+}
+
+#myAgents td.noAgents {
+	text-align: center;
+}
+
+#agentEditing td {
+
+}
+
+#tblAgentsData {
+	width: 100%;
+}
+
+#tblAgentsData td.fixedWidth {
+	padding-right: 10px;
+	width: 100px;
+}
+
+#tblAgentsData td.daysCol {
+	vertical-align: middle;
+}
+
+#applyError {
+	margin-bottom: 10px;
+}
+
+td.morePadding {
+	padding-right: 10px;
+}
+
+span.operator {
+	color: #999;
+}
+#tcpassword, #memberemail {
+	margin:0 0 5px 0;
+	width:98%;
+}
+#emailPassword {
+	font-size:11px;
+	font-weight:normal;
+	margin:5px 0 0 0;
+	top:-5px;
+	display:block;
+}
+#membernext, #btnTCPassword {
+	font-size:12px;
+	font-weight:bold;
+	padding:3px 8px;
+	cursor:pointer;
+	margin:10px 0 0 0;
+}
+
+#rememberMeShell {
+	margin: 20px 0 5px 0;
+}
+#requiredField {
+	font-style:italic;
+	clear:both;
+}
+
+/* These styles apply to the form fields in the Talent Community Profile Information section. */
+
+#tcsignup {
+	float: left;
+	width: 68%;
+}
+
+#tcsignup .userinfoRow {
+	padding: 0;
+	margin: 0px 0px 7px 0px;
+	display: block;
+	clear: both;
+	float:left;
+	width:100% !important;
+	width:460px; /* IE 6 and below use this value instead, even though the above is marked as important */
+}
+
+#tcsignup .userinfoLabel {
+	display: inline-block;
+	float: left;
+	width: 150px;
+	padding-top: 3px;
+	padding-right: 10px;
+}
+
+#tcsignup .userinfoItem {
+	display: block;
+	float: left;
+	width: 62%;
+}
+
+.userinfoItem label {
+	width: 200px;
+}
+
+#tcsignup .userinfoItem input[type="radio"] {
+	margin-left: 0;
+}
+
+#tcsignup .userinfoItem input[type="radio"] + label {
+	margin-right: 10px;
+}
+
+form.subscribeBox {
+	display: none;
+}
+
+#popupblocker p {
+	font-size: 13px;
+}
